@@ -1,6 +1,6 @@
 {
-  "name": "full-stack-web-project-mansouralsaleh",
-  "version": "1.0.0",
+  "name": "full-stack-web",
+  "version": "0.1.0",
   "dependencies": {
     "grunt-cli": "0.1.13"
   },
