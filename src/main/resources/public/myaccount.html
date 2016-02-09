@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabadul Book Exchange website!</title>
+<link rel="stylesheet" type="text/css" href="./stylesheets/mainsheet1.css">
+<script src="./js/javascript.js"></script>
+</head>
+
+<body onload="init();init2();">
+<div class="logo">
+<a href="index.html" title="Tabadul Book exchange services">
+<h1 class="logo">Example</h1>
+</a>
+</div>
+<div class="row SearchBar">
+<!--This search input bar design was adapted from http://webdesign.tutsplus.com/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069-->
+  <div class="col-2 col-m-3 container-2">
+      
+      adadsaafda 
+  </div>
+  <div class="col-8 col-m-6 container-1">
+      
+      <input type="search" id="search" placeholder="Search..." />
+  </div>
+  
+  <div class="col-2 col-m-3 login">
+  <div id="SignIn">
+  <p class="signin">Sign in, Or</p>
+  <p class="createAccount">Create Account</p>
+  </div>
+</div>
+</div>
+<div class="row">
+
+  <div class="col-4 col-m-3 sign" id="sign">
+	<form action="#" method="post">
+  Username:
+  <input type="text" name="firstname" ><br>
+  Password:
+  <input type="password" name="password" ><br>
+  <input type="submit" value="Sign In"><a href="#">Forgot my password</a>
+</form>
+<form action="#" method="get">
+<input type="submit" value="Create Account">
+</form>
+  </div>
+ </div>
+<div class="row">
+  <div class="col-3 col-m-3 menu">
+	<ul>
+		<li id="MyInfo" onclick="clickedMe('MyInfo', 'MyInfoDiv');">My Information</li>
+		<li id="AddBook" onclick="clickedMe('AddBook', 'AddBookDiv');">Add Book</li>
+		<li id="MyBooks" onclick="clickedMe('MyBooks', 'MyBooksDiv');">My Books</li>
+		<li id="RecView" onclick="clickedMe('RecView', 'RecViewDiv');">Recently Viewed</li>
+		<li id="MyCom" onclick="clickedMe('MyCom', 'MyComDiv');">My Comments</li>
+	</ul>
+  </div>
+  <div class="col-9 col-m-9 bookInfo" id="MyInfoDiv">
+		
+		<h1> First Name - last name</h1>
+		<h2>Username</h2>
+		<h4>password &#9; <a href="#">Change Password</a></h4>
+		<h4>Email</h4>
+		<h3>University Name</h3>
+		<h4>Major</h4>
+		<h3>Location</h3>
+  </div>
+   <div class="col-9 col-m-9 bookInfo" id="MyBooksDiv">
+		<div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+  </div> 
+  <div class="col-9 col-m-9 bookInfo" id="RecViewDiv">
+  <h4>On Tuesday:</h4>
+		<div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <h4>On Friday			:</h4>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+	  <div class="col-4 col-m-4 books">
+		<a href="book.html" >
+			<img src="images/book.jpg">
+			<h2>Book Name</h2>
+			<h3>University Name</h3>
+			<h4>Course Name</h4>
+		</a>
+	  </div>
+  </div> 
+	<div class="col-9 col-m-9 bookComment" id="MyComDiv">
+			
+			<h2>Comments</h2><br>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+
+	 </div>
+	 <div class="col-9 col-m-9 bookComment" id="AddBookDiv">
+			
+			<h2>Comments</h2><br>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+			<h4><a href="#">Book Name</a>,date/time</h4>
+			<p>Comment.................. ................... ................. ........................ ........... .
+			......... ............. .      ......... ........</p>
+
+	 </div>
+</div>
+
+</body>
+
+</html>

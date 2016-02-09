@@ -1,0 +1,217 @@
+body{
+	margin:0;
+}
+
+.logo{
+	
+	width:100%;
+
+	overflow: auto;
+	
+}
+div.logo a{
+	width:100%;
+		min-height:140px;
+	
+	    display: block;
+	background-image: url("../images/books1.jpg");
+	background-repeat:no-repeat;
+    background-size:100% 100%;
+	text-decoration:none;
+	color: inherit;
+	
+}
+h1.logo{
+	display: inline;
+	
+	position:relative;
+	top:70px;
+	font-size:3em;
+	text-decoration:none;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+8&1+65,0+99 */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,1) 8%, rgba(255,255,255,1) 65%, rgba(255,255,255,0) 99%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 8%,rgba(255,255,255,1) 65%,rgba(255,255,255,0) 99%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  rgba(255,255,255,1) 0%,rgba(255,255,255,1) 8%,rgba(255,255,255,1) 65%,rgba(255,255,255,0) 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+/*The next part was taken from w3schools*/
+* {
+    box-sizing: border-box;
+}
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+[class*="col-"] {
+    float: left;
+    padding: 15px;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-m-1 {width: 8.33%;}
+    .col-m-2 {width: 16.66%;}
+    .col-m-3 {width: 25%;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%;}
+    .col-m-9 {width: 75%;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+/*End of part taken from w3schools*/
+div.SearchBar{
+	
+
+		width:100%;
+	
+		background-color:gray;
+	color: inherit;
+	
+}
+
+.container-1 input#search{
+
+
+  width:100%;
+  
+  height: 60px;
+  font-size:14pt;
+  background: white;
+  border: none;
+  float: left;
+  color: #262626;
+  padding-left: 10%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 29px;
+ 
+   
+    -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition: background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+}
+.container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+    outline:none;
+    background: #ffffff;
+  }
+  .container-1 .icon{
+
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+.login{
+	display:table;
+
+padding-left:1%;
+padding-right:1%;
+	text-align:center;
+	font-size:1em;
+	height:90px;
+	
+}
+.login div{
+	display:table-cell;
+	vertical-align:middle; 
+	cursor: pointer; cursor: hand; 
+}
+.login div:hover{
+	 border: 1px solid #d0d0d0;
+	 border-radius:4px;
+}
+.login p{
+	
+	margin:0;
+	padding:0;
+}
+.signin{
+	color:lightgray;
+	font-size:16px;
+}
+.createAccount{
+	color:white;
+	font-size:17px;
+	font-weight:bold;
+}
+.sign{
+	
+	display:none;
+	float:right;
+	background-color:gray;
+}
+.books{
+	display:flex;justify-content:center;align-items:center;
+	text-align:center;
+}
+.books a{
+	    text-decoration: none;
+    color: inherit;
+}
+.books img{
+	width:100%;
+}
+.books h2{
+	margin:5px;
+}
+.books h3{
+	margin:5px;
+}
+.books h4{
+	margin:5px;
+}
+.bookImg img{
+	width:100%;
+}
+div.bookInfo h2, h4, p{
+	margin-left:5%;
+}
+.bookComment p{
+	margin-left:10%;
+}
+/*This menu list design taken and modified from w3school*/
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.menu li {
+    padding: 8px;
+    margin-bottom: 7px;
+    background-color :#33b5e5;
+    color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.menu li:hover {
+    background-color: #0099cc;
+}
+#MyBooksDiv, #RecViewDiv, #MyComDiv, #AddBookDiv{
+	display:none;
+}
