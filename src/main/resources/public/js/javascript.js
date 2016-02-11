@@ -10,11 +10,10 @@ function init(){
 				document.getElementById("sign").style.display="block";
 			}
 	};	
-};
+}
 function init2(){
 	document.getElementById("MyInfo").style.backgroundColor="#0099cc";
-}	
-
+}
 function clickedMe(menu, div){
 	document.getElementById(div).style.display="block";
 	document.getElementById(menu).style.backgroundColor="#0099cc";
@@ -69,5 +68,4 @@ function clickedMe(menu, div){
 		document.getElementById("RecView").style.backgroundColor="#33b5e5";
 		document.getElementById("MyInfo").style.backgroundColor="#33b5e5";
 	}
-
 }
