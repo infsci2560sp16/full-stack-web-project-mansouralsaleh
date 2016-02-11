@@ -26,11 +26,8 @@ public class Main {
 
     get("/hello", (req, res) -> {
       RelativisticModel.select();
-
-      String energy = System.getenv().get("ENERGY");
-
-      Amount<Mass> m = Amount.valueOf(energy).to(KILOGRAM);
-      return "E=mc^2: " + energy + " = " + m.toString();
+      Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
+      return "E=mc^2: 12 GeV = " + m.toString();
     });
 
     get("/", (request, response) -> {
