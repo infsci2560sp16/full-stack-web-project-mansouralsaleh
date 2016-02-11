@@ -14,8 +14,8 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-w3c-html-validation": "^0.1.7"
-  }
-},
- "scripts": {
-  "postinstall": "./node_modules/.bin/grunt"
+  },
+	 "scripts": {
+	  "postinstall": "./node_modules/.bin/grunt"
+	}
 }
