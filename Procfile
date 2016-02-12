@@ -1,1 +1,1 @@
-web:    java -cp target/classes:target/dependency/* helloworld
+web:    java -cp target/classes:target/dependency/* Main.java
