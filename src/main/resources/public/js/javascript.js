@@ -3,10 +3,12 @@ function init(){
 		if(document.getElementById("sign").style.display=="block"){
 		
 			this.style.backgroundColor = "gray";
+			this.style.borderColor = "gray";
 			document.getElementById("sign").style.display="none";
 		}
 		else {
 				this.style.backgroundColor = "#909090";
+				this.style.borderColor = "#909090";
 				document.getElementById("sign").style.display="block";
 			}
 	};	
