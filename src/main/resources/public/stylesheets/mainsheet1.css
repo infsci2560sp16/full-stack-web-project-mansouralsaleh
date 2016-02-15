@@ -44,6 +44,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     clear: both;
     display: block;
 }
+.top{
+	height:30px;
+}
 [class*="col-"] {
     float: left;
     padding: 15px;
@@ -52,10 +55,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 [class*="col-"] {
     width: 100%;
 }
+@media only screen and (max-width: 599.99px) {
+    /* For tablets: */
+    .colxm {width: 0;padding:0;}
+}
+
 @media only screen and (min-width: 600px) {
     /* For tablets: */
     .col-m-1 {width: 8.33%;}
     .col-m-2 {width: 16.66%;}
+	.col-m-25 {width: 20%;}
     .col-m-3 {width: 25%;}
     .col-m-4 {width: 33.33%;}
     .col-m-5 {width: 41.66%;}
@@ -66,11 +75,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
+	.colxm {width: 0;padding:0;}
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1048px) {
     /* For desktop: */
     .col-1 {width: 8.33%;}
     .col-2 {width: 16.66%;}
+	.col-u {width: 20.835%;}
     .col-3 {width: 25%;}
     .col-4 {width: 33.33%;}
     .col-5 {width: 41.66%;}
@@ -81,6 +92,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+	.col-x1 {width: 8.33%;padding: 15px;}
 }
 /*End of part taken from w3schools*/
 div.SearchBar{
@@ -178,17 +190,31 @@ padding-right:1%;
 .books img{
 	width:100%;
 }
+.books h1{
+	font-size: 1.7em;
+}
 .books h2{
+	font-weight:bold;
+	font-size: 1em;
+	color:darkblue;
 	margin:5px;
 }
 .books h3{
+	font-weight:normal;
+	font-size: 1em;
 	margin:5px;
 }
 .books h4{
+	font-weight:normal;
+	font-size: .9em;
 	margin:5px;
 }
 .bookImg img{
-	width:100%;
+	display: block;
+    width: 80% !important;
+	margin-left:10%;
+	margin-right:10%;
+    height: auto !important;
 }
 div.bookInfo h2, h4, p{
 	margin-left:5%;
