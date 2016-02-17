@@ -68,7 +68,7 @@ div.logo a{
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
-	.colxm {width: 0;padding:0!important;}
+	.colxm {width: 0;}
 }
 @media only screen and (min-width: 1048px) {
     /* For desktop: */
