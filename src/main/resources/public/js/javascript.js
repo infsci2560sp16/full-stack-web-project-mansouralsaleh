@@ -14,60 +14,60 @@ function init(){
 	};	
 }
 function init2(){
-	document.getElementById("MyInfo").style.backgroundColor="#0099cc";
+	document.getElementById("MyInfo").style.backgroundColor="#424242";
 }
 function clickedMe(menu, div){
 	document.getElementById(div).style.display="block";
-	document.getElementById(menu).style.backgroundColor="#0099cc";
+	document.getElementById(menu).style.backgroundColor="#424242";
 	
 	if(div=="MyInfoDiv"){
 		document.getElementById("MyBooksDiv").style.display="none";
 		document.getElementById("RecViewDiv").style.display="none";
 		document.getElementById("MyComDiv").style.display="none";
 		document.getElementById("AddBookDiv").style.display="none";
-		document.getElementById("AddBook").style.backgroundColor="#33b5e5";
-		document.getElementById("MyBooks").style.backgroundColor="#33b5e5";
-		document.getElementById("RecView").style.backgroundColor="#33b5e5";
-		document.getElementById("MyCom").style.backgroundColor="#33b5e5";
+		document.getElementById("AddBook").style.backgroundColor="#909090";
+		document.getElementById("MyBooks").style.backgroundColor="#909090";
+		document.getElementById("RecView").style.backgroundColor="#909090";
+		document.getElementById("MyCom").style.backgroundColor="#909090";
 	}
 	else if(div=="AddBookDiv"){
 		document.getElementById("MyInfoDiv").style.display="none";
 		document.getElementById("RecViewDiv").style.display="none";
 		document.getElementById("MyComDiv").style.display="none";
 		document.getElementById("MyBooksDiv").style.display="none";
-		document.getElementById("MyBooks").style.backgroundColor="#33b5e5";
-		document.getElementById("MyInfo").style.backgroundColor="#33b5e5";
-		document.getElementById("RecView").style.backgroundColor="#33b5e5";
-		document.getElementById("MyCom").style.backgroundColor="#33b5e5";
+		document.getElementById("MyBooks").style.backgroundColor="#909090";
+		document.getElementById("MyInfo").style.backgroundColor="#909090";
+		document.getElementById("RecView").style.backgroundColor="#909090";
+		document.getElementById("MyCom").style.backgroundColor="#909090";
 	}
 	else if(div=="MyBooksDiv"){
 		document.getElementById("MyInfoDiv").style.display="none";
 		document.getElementById("RecViewDiv").style.display="none";
 		document.getElementById("MyComDiv").style.display="none";
 		document.getElementById("AddBookDiv").style.display="none";
-		document.getElementById("AddBook").style.backgroundColor="#33b5e5";
-		document.getElementById("MyInfo").style.backgroundColor="#33b5e5";
-		document.getElementById("RecView").style.backgroundColor="#33b5e5";
-		document.getElementById("MyCom").style.backgroundColor="#33b5e5";
+		document.getElementById("AddBook").style.backgroundColor="#909090";
+		document.getElementById("MyInfo").style.backgroundColor="#909090";
+		document.getElementById("RecView").style.backgroundColor="#909090";
+		document.getElementById("MyCom").style.backgroundColor="#909090";
 	}
 	else if(div=="RecViewDiv"){
 		document.getElementById("MyBooksDiv").style.display="none";
 		document.getElementById("MyInfoDiv").style.display="none";
 		document.getElementById("MyComDiv").style.display="none";
 		document.getElementById("AddBookDiv").style.display="none";
-		document.getElementById("AddBook").style.backgroundColor="#33b5e5";
-		document.getElementById("MyBooks").style.backgroundColor="#33b5e5";
-		document.getElementById("MyInfo").style.backgroundColor="#33b5e5";
-		document.getElementById("MyCom").style.backgroundColor="#33b5e5";
+		document.getElementById("AddBook").style.backgroundColor="#909090";
+		document.getElementById("MyBooks").style.backgroundColor="#909090";
+		document.getElementById("MyInfo").style.backgroundColor="#909090";
+		document.getElementById("MyCom").style.backgroundColor="#909090";
 	}
 	else if(div=="MyComDiv"){
 		document.getElementById("MyBooksDiv").style.display="none";
 		document.getElementById("RecViewDiv").style.display="none";
 		document.getElementById("MyInfoDiv").style.display="none";
 		document.getElementById("AddBookDiv").style.display="none";
-		document.getElementById("AddBook").style.backgroundColor="#33b5e5";
-		document.getElementById("MyBooks").style.backgroundColor="#33b5e5";
-		document.getElementById("RecView").style.backgroundColor="#33b5e5";
-		document.getElementById("MyInfo").style.backgroundColor="#33b5e5";
+		document.getElementById("AddBook").style.backgroundColor="#909090";
+		document.getElementById("MyBooks").style.backgroundColor="#909090";
+		document.getElementById("RecView").style.backgroundColor="#909090";
+		document.getElementById("MyInfo").style.backgroundColor="#909090";
 	}
 }
