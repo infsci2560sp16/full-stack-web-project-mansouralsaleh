@@ -5,9 +5,11 @@ body{
 .logo{
 	
 	width:100%;
-
+	background-image: url("../images/amazon-banner.png");
 	overflow: auto;
 	min-height:140px;
+	background-repeat: no-repeat;
+	background-size: 100% 115%;
 }
 div.logo a{
 	width:100%;
@@ -27,6 +29,27 @@ div.logo a{
 /*The next part was taken from w3schools*/
 * {
     box-sizing: border-box;
+}
+.footer{
+	margin:auto;
+	background-color:gray;
+	color:white;
+}
+.footer h2{
+	width:100px;
+	margin:auto;
+}
+.footer h3{
+margin:auto;
+}
+.saudihouse{
+	width:250px;
+}
+.saudiemail{
+	width:250px;
+}
+.footerCenter{
+	text-align:center;
 }
 .row:after {
     content: "";
@@ -120,10 +143,6 @@ div.SearchBar{
   border-radius: 29px;
  
    background-color: white;
-   
-  
-  
-
 }
 .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
     outline:none;
@@ -188,7 +207,7 @@ padding-right:1%;
     color: inherit;
 }
 .books img{
-	width:100%;
+	width:85%;
 }
 .books h1{
 	font-size: 1.7em;
@@ -392,5 +411,11 @@ div.bookInfo h2, h4, p{
 .signUpDiv{
 	margin:0 10% 25px 0;
 	float:right;
-	
+}
+.university h2{
+	margin-left:10%;
+}
+.university h3{
+
+	margin-left:20%;
 }
