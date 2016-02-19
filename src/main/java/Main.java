@@ -26,7 +26,7 @@ public class Main {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");
 
-            return new ModelAndView(attributes, "../../../public/main.html");
+            return new ModelAndView(attributes, "index.html");
         }, new FreeMarkerEngine());
 
     get("/db", (req, res) -> {
