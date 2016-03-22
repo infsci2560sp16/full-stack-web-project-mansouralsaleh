@@ -13,6 +13,8 @@ import static spark.Spark.get;
 
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
+import Services.*;
+
 public class Main {
 
   public static void main(String[] args) {
@@ -20,13 +22,20 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
+	Object user = new BooksControler(new BooksService());
+	
+	
+	
+	
+	
+	/*
     get("/hello", (req, res) -> "Hello World");
 
     //get("/", (request, response) -> {
     //        Map<String, Object> attributes = new HashMap<>();
     //        attributes.put("message", "Hello World!");
     //
-    //        return new ModelAndView(attributes, "index.html");
+    //        return new ModelAndView(attributes, "index.ftl");
     //    }, new FreeMarkerEngine());
 
     get("/db", (req, res) -> {
@@ -54,6 +63,7 @@ public class Main {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
     }, new FreeMarkerEngine());
+	*/
 
   }
 
