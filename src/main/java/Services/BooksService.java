@@ -3,7 +3,7 @@ package Services;
 import java.util.*;
 
 public class BooksService {
-    private static HashMap<Integer , String[]> books  = new HashMap<>();
+    private static HashMap<String , Object> books  = new HashMap<>();
     private String[] BooksIDs = {"00001", "00002"};
     private String[] BooksNames = {"Engineering Psychology and Human Performance", "Some Book"};
     private String[] BooksAuthors = {"Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman", "Many Authors"};
@@ -24,19 +24,33 @@ public class BooksService {
     private String[] BooksISBN10 = {"0205021980", "1122334455"};
     private String[] BooksImages = {"book1.jpg", "Book.JPG"};
     
-    public HashMap<Integer, String[]> getAllBooks(){
+    public HashMap<String, Object> getAllBooks(){
         int length = BooksIDs.length;
         length = length+5;
-        int id = 0001;
         for (int i = 0; i < length; i++) {
             if(i<2){
-                books.put(id,new String[] {BooksIDs[0], BooksNames[0], BooksAuthors[0], BooksCondition[0], BooksUniversity[0], 
-                    BooksSchool[0], BooksDescription[0], BooksISBN13[0], BooksISBN10[0], BooksImages[0]});
+                books.put("BookID",BooksIDs[0]);
+                books.put("BookName",BooksNames[0]);
+                books.put("BookAuthors",BooksAuthors[0]);
+                books.put("BookCondition",BooksCondition[0]);
+                books.put("BookUniversity",BooksUniversity[0]);
+                books.put("BookSchool",BooksSchool[0]);
+                books.put("BookDescription",BooksDescription[0]);
+                books.put("BookISBN13",BooksISBN13[0]);
+                books.put("BookISBN10",BooksISBN10[0]);
+                books.put("BookImages",BooksImages[0]);
             }else{
-                books.put(id,new String[] {BooksIDs[1], BooksNames[1], BooksAuthors[1], BooksCondition[1], BooksUniversity[1], 
-                   BooksSchool[1], BooksDescription[1], BooksISBN13[1], BooksISBN10[1], BooksImages[1]}); 
+                books.put("BookID",BooksIDs[1]);
+                books.put("BookName",BooksNames[1]);
+                books.put("BookAuthors",BooksAuthors[1]);
+                books.put("BookCondition",BooksCondition[1]);
+                books.put("BookUniversity",BooksUniversity[1]);
+                books.put("BookSchool",BooksSchool[1]);
+                books.put("BookDescription",BooksDescription[1]);
+                books.put("BookISBN13",BooksISBN13[1]);
+                books.put("BookISBN10",BooksISBN10[1]);
+                books.put("BookImages",BooksImages[1]); 
             }
-            id++;
         }
     return books;
     }
