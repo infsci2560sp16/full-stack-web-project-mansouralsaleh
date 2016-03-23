@@ -24,7 +24,7 @@ public class BooksService {
     private String[] BooksISBN10 = {"0205021980", "1122334455"};
     private String[] BooksImages = {"book1.jpg", "Book.JPG"};
     
-    public HashMap<String, String[]> getAllBooks(){
+    public HashMap<Integer, String[]> getAllBooks(){
         int length = BooksIDs.length;
         length = length+5;
         int id = 0001;
