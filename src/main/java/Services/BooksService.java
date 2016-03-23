@@ -3,7 +3,7 @@ package Services;
 import java.util.*;
 
 public class BooksService {
-    private static HashMap<String, String[]> books  = new HashMap<>();
+    private static HashMap<Integer , String[]> books  = new HashMap<>();
     private String[] BooksIDs = {"00001", "00002"};
     private String[] BooksNames = {"Engineering Psychology and Human Performance", "Some Book"};
     private String[] BooksAuthors = {"Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman", "Many Authors"};
@@ -27,14 +27,16 @@ public class BooksService {
     public HashMap<String, String[]> getAllBooks(){
         int length = BooksIDs.length;
         length = length+5;
+        int id = 0001;
         for (int i = 0; i < length; i++) {
-            if(i<'2'){
-                books.put(BooksIDs[0],new String[] {BooksNames[0], BooksAuthors[0], BooksCondition[0], BooksUniversity[0], 
+            if(i<2){
+                books.put(id,new String[] {BooksIDs[0], BooksNames[0], BooksAuthors[0], BooksCondition[0], BooksUniversity[0], 
                     BooksSchool[0], BooksDescription[0], BooksISBN13[0], BooksISBN10[0], BooksImages[0]});
             }else{
-                books.put(BooksIDs[1],new String[] {BooksNames[1], BooksAuthors[1], BooksCondition[1], BooksUniversity[1], 
+                books.put(id,new String[] {BooksIDs[1], BooksNames[1], BooksAuthors[1], BooksCondition[1], BooksUniversity[1], 
                    BooksSchool[1], BooksDescription[1], BooksISBN13[1], BooksISBN10[1], BooksImages[1]}); 
             }
+            id++;
         }
     return books;
     }
