@@ -28,14 +28,13 @@ public class BooksService {
         int length = BooksIDs.length;
         length = length+5;
         for (int i = 0; i < length; i++) {
-            if(i<2){
+            if(i<'2'){
                 books.put(BooksIDs[0],new String[] {BooksNames[0], BooksAuthors[0], BooksCondition[0], BooksUniversity[0], 
                     BooksSchool[0], BooksDescription[0], BooksISBN13[0], BooksISBN10[0], BooksImages[0]});
             }else{
-               books.put(BooksIDs[1],new String[] {BooksNames[1], BooksAuthors[1], BooksCondition[1], BooksUniversity[1], 
+                books.put(BooksIDs[1],new String[] {BooksNames[1], BooksAuthors[1], BooksCondition[1], BooksUniversity[1], 
                    BooksSchool[1], BooksDescription[1], BooksISBN13[1], BooksISBN10[1], BooksImages[1]}); 
             }
-            i++;
         }
     return books;
     }
