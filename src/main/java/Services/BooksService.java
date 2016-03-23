@@ -25,7 +25,9 @@ public class BooksService {
     private String[] BooksImages = {"book1.jpg", "Book.JPG"};
     
     public HashMap<String, String[]> getAllBooks(){
-        for (int i = 0; i < BooksIDs.length+5; i++) {
+        int length = BooksIDs.length();
+        length = length+5;
+        for (int i = 0; i < length; i++) {
             if(i<2){
                 books.put(BooksIDs[0],new String[] {BooksNames[0], BooksAuthors[0], BooksCondition[0], BooksUniversity[0], 
                     BooksSchool[0], BooksDescription[0], BooksISBN13[0], BooksISBN10[0], BooksImages[0]});
