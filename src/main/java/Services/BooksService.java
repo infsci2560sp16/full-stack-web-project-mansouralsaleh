@@ -3,7 +3,8 @@ package Services;
 import java.util.*;
 
 public class BooksService {
-    private static HashMap<String , Object> books  = new HashMap<>();
+    private static HashMap<String, String> book ;
+    private static ArrayList<Map<String, String>> arrayList = new ArrayList<>();
     private String[] BooksIDs = {"00001", "00002"};
     private String[] BooksNames = {"Engineering Psychology and Human Performance", "Some Book"};
     private String[] BooksAuthors = {"Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman", "Many Authors"};
@@ -23,35 +24,43 @@ public class BooksService {
     private String[] BooksISBN13 = {"978-0205021987", "111-2233445566"};
     private String[] BooksISBN10 = {"0205021980", "1122334455"};
     private String[] BooksImages = {"book1.jpg", "Book.JPG"};
+    private String[] BooksCourse = {"Human Factors in System Design", "Course Name"};
     
-    public HashMap<String, Object> getAllBooks(){
+    public ArrayList<Map<String, String>> getAllBooks(){
         int length = BooksIDs.length;
         length = length+5;
         for (int i = 0; i < length; i++) {
-            if(i<2){
-                books.put("BookID",BooksIDs[0]);
-                books.put("BookName",BooksNames[0]);
-                books.put("BookAuthors",BooksAuthors[0]);
-                books.put("BookCondition",BooksCondition[0]);
-                books.put("BookUniversity",BooksUniversity[0]);
-                books.put("BookSchool",BooksSchool[0]);
-                books.put("BookDescription",BooksDescription[0]);
-                books.put("BookISBN13",BooksISBN13[0]);
-                books.put("BookISBN10",BooksISBN10[0]);
-                books.put("BookImages",BooksImages[0]);
+             
+            book = new HashMap<String, String>();
+            if(i <= 2){
+                book.put("BookID",BooksIDs[0]);
+                book.put("BookName",BooksNames[0]);
+                book.put("BookAuthors",BooksAuthors[0]);
+                book.put("BookCondition",BooksCondition[0]);
+                book.put("BookUniversity",BooksUniversity[0]);
+                book.put("BookSchool",BooksSchool[0]);
+                book.put("BookDescription",BooksDescription[0]);
+                book.put("BookISBN13",BooksISBN13[0]);
+                book.put("BookISBN10",BooksISBN10[0]);
+                book.put("BookImages",BooksImages[0]);
+                book.put("BookCourse",BooksCourse[0]); 
             }else{
-                books.put("BookID",BooksIDs[1]);
-                books.put("BookName",BooksNames[1]);
-                books.put("BookAuthors",BooksAuthors[1]);
-                books.put("BookCondition",BooksCondition[1]);
-                books.put("BookUniversity",BooksUniversity[1]);
-                books.put("BookSchool",BooksSchool[1]);
-                books.put("BookDescription",BooksDescription[1]);
-                books.put("BookISBN13",BooksISBN13[1]);
-                books.put("BookISBN10",BooksISBN10[1]);
-                books.put("BookImages",BooksImages[1]); 
+                book.put("BookID",BooksIDs[1]);
+                book.put("BookName",BooksNames[1]);
+                book.put("BookAuthors",BooksAuthors[1]);
+                book.put("BookCondition",BooksCondition[1]);
+                book.put("BookUniversity",BooksUniversity[1]);
+                book.put("BookSchool",BooksSchool[1]);
+                book.put("BookDescription",BooksDescription[1]);
+                book.put("BookISBN13",BooksISBN13[1]);
+                book.put("BookISBN10",BooksISBN10[1]);
+                book.put("BookImages",BooksImages[1]); 
+                book.put("BookCourse",BooksCourse[1]); 
             }
+            arrayList.add(book);
         }
-    return books;
+        
+        
+    return arrayList;
     }
 }
