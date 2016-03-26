@@ -110,28 +110,28 @@ public class BooksService {
     
     public ArrayList<Map<String, String>> getOneBook(String id){
         arrayList = new ArrayList<>();
-        int pointer = 1;
         if(!id.equals("")){
-            if(id.equals("0001"))
-                    pointer=0;
-            else if(id.equals("0002"))
-                    pointer=1;
+
+            int length = BooksIDs.size();
+            for (int i = 0; i<=length; i++){
+                if(id.equals(BooksIDs.get(i))){
+                    book = new HashMap<String, String>();
+                    book.put("BookID",BooksIDs.get(i));
+                    book.put("BookName",BooksNames.get(i));
+                    book.put("BookAuthors",BooksAuthors.get(i));
+                    book.put("BookCondition",BooksCondition.get(i));
+                    book.put("BookUniversity",BooksUniversity.get(i));
+                    book.put("BookSchool",BooksSchool.get(i));  
+                    book.put("BookDescription",BooksDescription.get(i));
+                    book.put("BookISBN13",BooksISBN13.get(i));
+                    book.put("BookISBN10",BooksISBN10.get(i));
+                    book.put("BookImages",BooksImages.get(i));
+                    book.put("BookCourse",BooksCourse.get(i)); 
+                    arrayList.add(book);
+                }
             }
-            book = new HashMap<String, String>();
-            book.put("BookID",BooksIDs.get(pointer));
-            book.put("BookName",BooksNames.get(pointer));
-            book.put("BookAuthors",BooksAuthors.get(pointer));
-            book.put("BookCondition",BooksCondition.get(pointer));
-            book.put("BookUniversity",BooksUniversity.get(pointer));
-            book.put("BookSchool",BooksSchool.get(pointer));  
-            book.put("BookDescription",BooksDescription.get(pointer));
-            book.put("BookISBN13",BooksISBN13.get(pointer));
-            book.put("BookISBN10",BooksISBN10.get(pointer));
-            book.put("BookImages",BooksImages.get(pointer));
-            book.put("BookCourse",BooksCourse.get(pointer)); 
-            arrayList.add(book);
         
-        
+        }
         return arrayList;
     }
 }
