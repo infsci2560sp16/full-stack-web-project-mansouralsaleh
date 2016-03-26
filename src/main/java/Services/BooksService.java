@@ -113,7 +113,7 @@ public class BooksService {
         if(!id.equals("")){
 
             int length = BooksIDs.size();
-            for (int i = 0; i<=length; i++){
+            for (int i = 0; i<length; i++){
                 if(id.equals(BooksIDs.get(i))){
                     book = new HashMap<String, String>();
                     book.put("BookID",BooksIDs.get(i));

@@ -33,7 +33,7 @@ public class BooksControler {
 				return arrayList;
 			}
 			
-			return "[{\"" + id + "\":\"Could not find the book you search for please try again. ";
+			return "[{\"" + id + "\":\"Could not find the book you search for please try again. \"}]";
 		}, gson::toJson);
     
     }
