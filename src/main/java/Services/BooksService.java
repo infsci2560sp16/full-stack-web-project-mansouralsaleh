@@ -111,7 +111,7 @@ public class BooksService {
     public ArrayList<Map<String, String>> getOneBook(String id){
         arrayList = new ArrayList<>();
         int pointer = 0;
-        if(id !=""){
+        if(!"".equals(id)){
             switch(id){
                 case "0001":
                     pointer=0;
