@@ -110,7 +110,7 @@ public class BooksService {
     
     public ArrayList<Map<String, String>> getOneBook(String id){
         arrayList = new ArrayList<>();
-        int pointer;
+        int pointer = 3;
         if(id !=""){
             switch(id){
                 case "0001":
