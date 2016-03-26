@@ -110,15 +110,12 @@ public class BooksService {
     
     public ArrayList<Map<String, String>> getOneBook(String id){
         arrayList = new ArrayList<>();
-        int pointer = 0;
+        int pointer = 1;
         if(!id.equals("")){
-            switch(id){
-                case "0001":
+            if(id.equals("0001"))
                     pointer=0;
-                    break;
-                case "0002":
+            else if(id.equals("0002"))
                     pointer=1;
-                    break;
             }
             book = new HashMap<String, String>();
             book.put("BookID",BooksIDs.get(pointer));
@@ -133,7 +130,7 @@ public class BooksService {
             book.put("BookImages",BooksImages.get(pointer));
             book.put("BookCourse",BooksCourse.get(pointer)); 
             arrayList.add(book);
-        }
+        
         
         return arrayList;
     }
