@@ -121,17 +121,17 @@ public class BooksService {
                     break;
             }
             book = new HashMap<String, String>();
-            book.put("BookID",BooksIDs.get(0));
-            book.put("BookName",BooksNames.get(0));
-            book.put("BookAuthors",BooksAuthors.get(0));
-            book.put("BookCondition",BooksCondition.get(0));
-            book.put("BookUniversity",BooksUniversity.get(0));
-            book.put("BookSchool",BooksSchool.get(0));  
-            book.put("BookDescription",BooksDescription.get(0));
-            book.put("BookISBN13",BooksISBN13.get(0));
-            book.put("BookISBN10",BooksISBN10.get(0));
-            book.put("BookImages",BooksImages.get(0));
-            book.put("BookCourse",BooksCourse.get(0)); 
+            book.put("BookID",BooksIDs.get(pointer));
+            book.put("BookName",BooksNames.get(pointer));
+            book.put("BookAuthors",BooksAuthors.get(pointer));
+            book.put("BookCondition",BooksCondition.get(pointer));
+            book.put("BookUniversity",BooksUniversity.get(pointer));
+            book.put("BookSchool",BooksSchool.get(pointer));  
+            book.put("BookDescription",BooksDescription.get(pointer));
+            book.put("BookISBN13",BooksISBN13.get(pointer));
+            book.put("BookISBN10",BooksISBN10.get(pointer));
+            book.put("BookImages",BooksImages.get(pointer));
+            book.put("BookCourse",BooksCourse.get(pointer)); 
             arrayList.add(book);
         }
         
