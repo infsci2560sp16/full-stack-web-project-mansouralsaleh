@@ -63,10 +63,11 @@
                         var data = JSON.parse(result);
 						var size = data.length;
 						var divBefore="";
+						var counter=1;
 						for(i=0; i<size; i++){
 							if(i == 0){
 								var referenceNode = document.getElementById('beforeContent');
-								
+								console.log("case i = 0,,,"+ i);
 								var div = document.createElement("div");
 								div.setAttribute("class", "row");
 								div.setAttribute("id", "row"+i);
@@ -76,15 +77,19 @@
 								divLeft.setAttribute("class", "col-1 col-m-1 colxmv books left");
 								div.appendChild(divLeft);
 							}
-							var divBook = document.createElement("div");
+							
+							console.log("Counter ="+counter+",,,,case i ="+ i);
+								var divBook = document.createElement("div");
 								divBook.setAttribute("class", "col-u col-m-u colu books 1");
 								divBook.setAttribute("id", i);
 								div.appendChild(divBook);
-								document.getElementById(i).innerHTML =  '<a href="book.html" ><img src="images/'+data[i].BookImages+'"'+
+								document.getElementById(i).innerHTML =  '<a href="book.html?id='+data[i].BookID+'" ><img src="images/'+data[i].BookImages+'"'+
 								'alt="'+data[i].BookName+'"><h2>'+data[i].BookName+'</h2>'+
 								'<h3>'+data[i].BookUniversity+'</h3><h4>'+data[i].BookCourse+'</h4></a>';
 							
-							if(i!=0 && i % 3 == 0){
+							
+							if(counter==4){
+							console.log("counter 4,,,,,i="+ i);
 								var divRight = document.createElement("div");
 								divRight.setAttribute("class", "col-1 col-m-1 colxmv books right");
 								div.appendChild(divRight);
@@ -98,8 +103,9 @@
 								var divLeft = document.createElement("div");
 								divLeft.setAttribute("class", "col-1 col-m-1 colxmv books left");
 								div.appendChild(divLeft);
-								
+								counter=0;
 							}
+							counter++;
 						}
 						var divRight = document.createElement("div");
 								divRight.setAttribute("class", "col-1 col-m-1 colxmv books right");
@@ -108,10 +114,7 @@
                     }});
             });
         </script>
-		<div id="current-time">
-		</div>
-		<div id="one">
-		</div>
+
 
 <div class="row footer" id="footer">
   <div class="col-6 col-m-6 footerCenter">

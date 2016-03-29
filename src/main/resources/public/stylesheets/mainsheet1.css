@@ -358,6 +358,7 @@ div.bookInfo h2, h4, p{
 }
 @media only screen and (min-width: 600px) {
 	.lableContact{margin-bottom:50px;}
+	.lablebook{margin-bottom:5px;}
 	.formLabel{padding-right:10px;text-align: right;}
 }
 @media only screen and (max-width: 599.99px) {

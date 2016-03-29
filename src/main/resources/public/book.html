@@ -8,6 +8,8 @@
 <title>Engineering Psychology and Human Performance --- Tabadul</title>
 <link rel="stylesheet" type="text/css" href="./stylesheets/mainsheet1.css">
 <script src="./js/javascript.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 </head>
 
 <body onload="init();">
@@ -55,23 +57,26 @@
 
 </div>
 <div class="row">
-  <div class="col-5 col-m-4 bookImg">
+  <div class="col-5 col-m-4 bookImg" id ="img">
+<script>
+var id = GetURLParameter('id');
 
-		<img src="images/book1.jpg" alt="Engineering Psychology & Human Performance">
-<h2>ISBN-13: 978-0205021987</h2>
-<h2>ISBN-10: 0205021980</h2>
-  </div>
-  <div class="col-7 col-m-8 bookInfo">
-		
-		<h1>Engineering Psychology and Human Performance</h1>
-		<h2> Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman</h2>
-		<h4>Book Condition: New</h4>
-		<h3>University of Pittsburgh</h3>
-		<h4>School of Information Science</h4>
-		<h4>Course: Human Factors in System Design</h4>
-		<h3>Description</h3>
-		<p>Forming connections between human performance and design Engineering Psychology and Human Performance, 4e examines human-machine interaction. The book is organized directly from the psychological perspective of human information processing. The chapters generally correspond to the flow of information as it is processed by a human being--from the senses, through the brain, to action--rather than from the perspective of system components or engineering design concepts. This book is ideal for a psychology student, engineering student, or actual practitioner in engineering psychology, human performance, and human factors Learning Goals Upon completing this book, readers should be able to: * Identify how human ability contributes to the design of technology. * Understand the connections within human information processing and human performance. * Challenge the way they think about technology's influence on human performance.  * show how theoretical advances have been, or might be, applied to improving human-machine interaction</p>
-		
+            $(function () {
+                $.ajax({
+				
+                    url: "/Books/"+id,
+                    success: function (result) {
+                        var data = JSON.parse(result);
+						document.getElementById("img").innerHTML =  '<img src="images/'+data[0].BookImages+'" alt="'+data[0].BookName+'">'
+						+'<h2>ISBN-13: '+data[0].BookISBN13+'</h2><h2>ISBN-10: '+data[0].BookISBN10+'</h2>';
+						$('#img').after('</div><div class="col-7 col-m-8 bookInfo" id="Bookinfo">');
+						
+						document.getElementById("Bookinfo").innerHTML =  '<h1>'+data[0].BookName+'</h1><h2>'+data[0].BookAuthors+'</h2>'
+						+'<h4>Book Condition: '+data[0].BookCondition+'</h4><h3>'+data[0].BookUniversity+'</h3><h4>'+data[0].BookSchool+'</h4><h4>Course: '
+						+data[0].BookCourse+'</h4><h3>Description</h3><p>'+data[0].BookDescription+'</p>';                        
+                    }});
+            });
+        </script>
   </div>
   
 

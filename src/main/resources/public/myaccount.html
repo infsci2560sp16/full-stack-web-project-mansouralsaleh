@@ -190,21 +190,94 @@
 			......... ............. .      ......... ........</p>
 
 	 </div>
-	 <div class="col-9 col-m-9 bookComment" id="AddBookDiv">
-			
-			<h2>Comments</h2><br>
-			<h4><a href="#">Book Name</a>,date/time</h4>
-			<p>Comment.................. ................... ................. ........................ ........... .
-			......... ............. .      ......... ........</p>
-			<h4><a href="#">Book Name</a>,date/time</h4>
-			<p>Comment.................. ................... ................. ........................ ........... .
-			......... ............. .      ......... ........</p>
-			<h4><a href="#">Book Name</a>,date/time</h4>
-			<p>Comment.................. ................... ................. ........................ ........... .
-			......... ............. .      ......... ........</p>
+		<div class="col-8 col-m-8 bookComment formContainer" id="AddBookDiv">
+		  
+			  <form action="/Book" method="POST">
+				  <div class="formheader">
+					<h1> Add Book Form</h1>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="name" class="col-4 col-m-4 formLabel lablebook">Book Name</label>
 
-	 </div>
-</div>
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="name" class='registrationForm' name="name"  type='text' required>
+					</div>
+				  </div>
+				  
+				   <div class="row form">
+					<label for="author" class="col-4 col-m-4 formLabel lablebook">Author's Names</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="author" class='registrationForm' name="authors" placeholder='Enter names seperated by a comma'  type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="condition" class="col-4 col-m-4 formLabel lablebook">Book Condition</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="author" class='registrationForm' name="condition" placeholder='Enter names seperated by a comma'  type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="uni" class="col-4 col-m-4 formLabel lablebook">University Name</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="uni" class='registrationForm' name="university" type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="school" class="col-4 col-m-4 formLabel lablebook">School Name</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="school" class='registrationForm' name="school" type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="course" class="col-4 col-m-4 formLabel lablebook">Course Name</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="course" class='registrationForm' name="course" type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="ISBN13" class="col-4 col-m-4 formLabel lablebook">ISBN-13</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="ISBN13" class='registrationForm' name="ISBN13" type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="ISBN10" class="col-4 col-m-4 formLabel lablebook">ISBN-10</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="ISBN10" class='registrationForm' name="ISBN10" type='text' required>
+					</div>
+				  </div>
+				  
+				  <div class="row form">
+					<label for="img" class="col-4 col-m-4 formLabel lablebook">Image</label>
+
+					<div class="col-8 col-m-8 formDivs" >
+						<input id="img" class='registrationForm' name="img" type='text' required>
+					</div>
+				  </div>
+				 
+				  <div class="signUpDiv">
+					<input type="submit" name="add" class = "btn" value="Add Book" class="signUp">
+				  </div>
+			</form>
+			  
+
+		</div>
+	</div>
+	</br>
 <div class="row footer">
   <div class="col-6 col-m-6 footerCenter">
 		<h2>Tabadul</h2>

@@ -1,11 +1,11 @@
-package Services;
+package Services.Books;
 
 import java.util.*;
 
 public class BooksService {
     private static HashMap<String, String> book ;
     private static ArrayList<Map<String, String>> arrayList ;
-    private LinkedList<String> BooksIDs  = new LinkedList<>();// {"00001", "00002"};
+    private LinkedList<Integer> BooksIDs  = new LinkedList<>();// {"00001", "00002"};
    // private String[] BooksNames = {"Engineering Psychology and Human Performance", "Some Book"};
     private LinkedList<String> BooksNames  = new LinkedList<>();
     //private String[] BooksAuthors = {"Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman", "Many Authors"};
@@ -37,8 +37,8 @@ public class BooksService {
     private LinkedList<String> BooksCourse  = new LinkedList<>();
     
     public BooksService(){
-        BooksIDs.add("0001");
-        BooksIDs.add("0002");
+        BooksIDs.add(1);
+        BooksIDs.add(2);
         
         BooksNames.add("Engineering Psychology and Human Performance");
         BooksNames.add("Some Book");
@@ -82,25 +82,17 @@ public class BooksService {
     public ArrayList<Map<String, String>> getAllBooks(){
         
         arrayList = new ArrayList<>();
-        int length = 2;
-        length = length+5;
+        int length = BooksIDs.size();
+        
         for (int i = 0; i < length; i++) {
              
             book = new HashMap<String, String>();
             
-            if(i <= 2){
-                book.put("BookID",BooksIDs.get(0));
-                book.put("BookName",BooksNames.get(0));
-                book.put("BookUniversity",BooksUniversity.get(0));
-                book.put("BookImages",BooksImages.get(0));
-                book.put("BookCourse",BooksCourse.get(0)); 
-            }else{
-                book.put("BookID",BooksIDs.get(1));
-                book.put("BookName",BooksNames.get(1));
-                book.put("BookUniversity",BooksUniversity.get(1));
-                book.put("BookImages",BooksImages.get(1));
-                book.put("BookCourse",BooksCourse.get(1)); 
-            }
+                book.put("BookID",BooksIDs.get(i).toString());
+                book.put("BookName",BooksNames.get(i));
+                book.put("BookUniversity",BooksUniversity.get(i));
+                book.put("BookImages",BooksImages.get(i));
+                book.put("BookCourse",BooksCourse.get(i)); 
             arrayList.add(book);
         }
         
@@ -108,15 +100,15 @@ public class BooksService {
         return arrayList;
     }
     
-    public ArrayList<Map<String, String>> getOneBook(String id){
+    public ArrayList<Map<String, String>> getOneBook(Integer id){
         arrayList = new ArrayList<>();
         if(!id.equals("")){
 
             int length = BooksIDs.size();
             for (int i = 0; i<length; i++){
-                if(id.equals(BooksIDs.get(i))){
+                if(id==BooksIDs.get(i)){
                     book = new HashMap<String, String>();
-                    book.put("BookID",BooksIDs.get(i));
+                    book.put("BookID",BooksIDs.get(i).toString());
                     book.put("BookName",BooksNames.get(i));
                     book.put("BookAuthors",BooksAuthors.get(i));
                     book.put("BookCondition",BooksCondition.get(i));
@@ -133,5 +125,33 @@ public class BooksService {
         
         }
         return arrayList;
+    }
+    
+    public String createBook(Integer id, String bookname, String bookauthors,
+            String bookcondition, String bookuniversity, String bookschool, String bookcourse,
+            String bookISBN13, String bookISBN10, String bookimg){
+        if(id==3){
+        BooksIDs.add(id);
+        BooksNames.add(bookname);
+        BooksAuthors.add(bookauthors);
+        BooksCondition.add(bookcondition);
+        BooksUniversity.add(bookuniversity);
+        BooksSchool.add(bookschool);
+        BooksDescription.add(bookcourse);
+        BooksISBN13.add(bookISBN13);
+        BooksISBN10.add(bookISBN10);
+        BooksImages.add(bookimg);        
+        return BooksNames.get(2);
+        }
+        else{
+            return "";}
+    }
+    
+    public Integer getNumberOfBooks(){
+        int size = BooksIDs.size();
+        return size;
+    }
+    public String getbooksname(){
+        return BooksNames.get(0);
     }
 }

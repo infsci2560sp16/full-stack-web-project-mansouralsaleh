@@ -71,3 +71,17 @@ function clickedMe(menu, div){
 		document.getElementById("MyInfo").style.backgroundColor="#909090";
 	}
 }
+//This function and code associated with it was taken from http://www.jquerybyexample.net/2012/06/get-url-parameters-using-jquery.html
+function GetURLParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++)
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam)
+        {
+            return sParameterName[1];
+        }
+	}
+}
