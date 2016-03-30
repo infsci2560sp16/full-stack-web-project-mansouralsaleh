@@ -111,7 +111,7 @@ public class BooksService {
 
             String arrayListToJson = gson.toJson(Books);
 
-            String filename = "Book_entries";
+            String filename = "Book_entries.json";
             File file = new File("src\\main\\resources\\public", filename);        	
             file.delete();
             
@@ -174,7 +174,7 @@ public class BooksService {
 
         String arrayListToJson = gson.toJson(Books);
 
-        String filename = "Book_entries";
+        String filename = "Book_entries.json";
         File file = new File("src\\main\\resources\\public", filename);        	
         file.delete();
         try {
@@ -189,8 +189,8 @@ public class BooksService {
     }
 
     public List<HashMap<String,String>> readCurrentList() {
-        String filename = "Book_entries";
-        File file = new File("app\\src\\main\\resources\\public", filename);
+        String filename = "Book_entries.json";
+        File file = new File("src\\main\\resources\\public", filename);
         List<HashMap<String,String>> Book = null;
         try {
             Gson gson = new Gson();
