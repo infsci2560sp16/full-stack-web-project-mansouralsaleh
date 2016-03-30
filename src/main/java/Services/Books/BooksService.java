@@ -112,7 +112,7 @@ public class BooksService {
             String arrayListToJson = gson.toJson(Books);
 
             String filename = "Book_entries";
-            File file = new File("https://nameless-mountain-5787.herokuapp.com/", filename);        	
+            File file = new File("/", filename);        	
             file.delete();
             
                 BufferedWriter buffWriter = new BufferedWriter(new FileWriter(file, true));
@@ -190,7 +190,7 @@ public class BooksService {
 
     public List<HashMap<String,String>> readCurrentList() {
         String filename = "Book_entries";
-        File file = new File("https://nameless-mountain-5787.herokuapp.com/", filename);
+        File file = new File("..", filename);
         List<HashMap<String,String>> Book = null;
         try {
             Gson gson = new Gson();
@@ -211,6 +211,10 @@ public class BooksService {
             return Book;
         }
         
+    }
+    public String test(){
+        String workingDir = System.getProperty("user.dir");
+        return workingDir;
     }
     
 }
