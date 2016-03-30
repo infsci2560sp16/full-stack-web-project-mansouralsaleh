@@ -64,16 +64,6 @@ public class BooksControler {
             return e;
              }
 	}, gson::toJson);
-        
-        get("/test", (req, res) -> {
-            try 
-        {
-            return booksService.test();
-            } catch (Exception e) {
-            return e;
-             }
-        }, gson::toJson);
-        
     
     }
 
