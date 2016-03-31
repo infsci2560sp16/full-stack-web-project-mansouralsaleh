@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <Universities xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://nameless-mountain-5787.herokuapp.com uni.xsd">
 	<University>
+		<id>1</id>
 		<name>University of Pitssburgh</name>
 		<image>pitt.png</image>
 		<schools>
@@ -30,9 +31,6 @@
 					<major>
 						<majorname>Instruction and Learning</majorname>
 					</major>
-					<major>
-						<majorname>Psychology in Education</majorname>
-					</major>
 				</majors>
 			</school>
 			<school>
@@ -52,20 +50,21 @@
 		</schools>
 	</University>
 	<University>
+		<id>2</id>
 		<name>Carnegie Mellon University</name>
 		<image>cmu.jpg</image>
 		<schools>
 			<school>
-				<schoolname>School of Information Science</schoolname>
+				<schoolname>A</schoolname>
 				<majors>
 					<major>
-						<majorname>Information Science</majorname>
+						<majorname>major 1</majorname>
 					</major>
 					<major>
-						<majorname>Telecomunication</majorname>
+						<majorname>major 2</majorname>
 					</major>
 					<major>
-						<majorname>Library and Information Science</majorname>
+						<majorname>major 3</majorname>
 					</major>
 				</majors>
 			</school>
@@ -81,9 +80,6 @@
 					<major>
 						<majorname>Instruction and Learning</majorname>
 					</major>
-					<major>
-						<majorname>Psychology in Education</majorname>
-					</major>
 				</majors>
 			</school>
 			<school>
@@ -103,6 +99,7 @@
 		</schools>
 	</University>
 	<University>
+		<id>3</id>
 		<name>Duquesne University</name>
 		<image>logo-duquesne-university.jpg</image>
 		<schools>
@@ -132,9 +129,6 @@
 					<major>
 						<majorname>Instruction and Learning</majorname>
 					</major>
-					<major>
-						<majorname>Psychology in Education</majorname>
-					</major>
 				</majors>
 			</school>
 			<school>
@@ -154,6 +148,7 @@
 		</schools>
 	</University>
 	<University>
+		<id>4</id>
 		<name>Robert Morris University</name>
 		<image>Robert_Morris_University_logo.png</image>
 		<schools>
@@ -183,9 +178,6 @@
 					<major>
 						<majorname>Instruction and Learning</majorname>
 					</major>
-					<major>
-						<majorname>Psychology in Education</majorname>
-					</major>
 				</majors>
 			</school>
 			<school>
@@ -205,6 +197,7 @@
 		</schools>
 	</University>
 	<University>
+		<id>5</id>
 		<name>University Name</name>
 		<image>uni.png</image>
 		<schools>
@@ -233,9 +226,6 @@
 					</major>
 					<major>
 						<majorname>Instruction and Learning</majorname>
-					</major>
-					<major>
-						<majorname>Psychology in Education</majorname>
 					</major>
 				</majors>
 			</school>

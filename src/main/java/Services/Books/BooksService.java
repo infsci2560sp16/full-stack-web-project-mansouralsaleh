@@ -7,20 +7,28 @@ import com.google.common.collect.Lists;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.lang.reflect.Type;
-import java.util.Map.Entry;
+import java.net.*;
+import java.lang.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.StringReader;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
+import org.xml.sax.InputSource;
 
 public class BooksService {
     private static HashMap<String, String> book ;
+    private String str;
     private static List<HashMap<String,String>> arrayList ;
      private static ArrayList<Books> BooksList ;
     private LinkedList<Integer> BooksIDs  = new LinkedList<>();// {"00001", "00002"};
@@ -58,7 +66,7 @@ public class BooksService {
         
        // saveListToFile();
     }
-    public List<HashMap<String,String>> getAllBooks(){
+    public List<HashMap<String, String>> getAllBooks(){
         return readCurrentList();
     }
     
@@ -86,8 +94,7 @@ public class BooksService {
         return arrayList;
     }
     
-
-    public void createBook(String bookname, String bookauthors,
+    public void createBook( String bookname, String bookauthors,
             String bookcondition, String bookuniversity, String bookschool, String bookcourse,
             String bookISBN13, String bookISBN10, String bookimg, String bookdescription){
         
@@ -113,7 +120,7 @@ public class BooksService {
             String arrayListToJson = gson.toJson(Books);
 
             String filename = "Book_entries.json";
-            File file = new File("src\\main\\resources\\public", filename);        	
+            File file = new File("src/main/resources/public",filename);        	
             file.delete();
             
                 BufferedWriter buffWriter = new BufferedWriter(new FileWriter(file, true));
@@ -176,7 +183,7 @@ public class BooksService {
         String arrayListToJson = gson.toJson(Books);
 
         String filename = "Book_entries.json";
-        File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");        	
+        File file = new File("src/main/resources/public",filename);        	
         file.delete();
         try {
             BufferedWriter buffWriter = new BufferedWriter(new FileWriter(file, true));
@@ -189,13 +196,13 @@ public class BooksService {
         return 0;
     }
 
-    public List<HashMap<String,String>> readCurrentList() {
+    public List<HashMap<String, String>> readCurrentList() {
         String filename = "Book_entries.json";
-        File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");   
+        File file = new File("src/main/resources/public",filename);   
         List<HashMap<String,String>> Book = null;
-        try {
+       
             Gson gson = new Gson();
-
+           try {
             BufferedReader buffReader = new BufferedReader(new FileReader(file));
             String line;
             String jsonString= "";
@@ -213,13 +220,11 @@ public class BooksService {
         }
         
     }
-    
-<<<<<<< HEAD
     public String getAllUniversities(){
 
         try {
             //filename is filepath string
-            BufferedReader br = new BufferedReader(new FileReader(new File("https://nameless-mountain-5787.herokuapp.com/unixml.xml")));
+            BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/public/unixml.xml")));
             String line;
             StringBuilder sb = new StringBuilder();
 
@@ -236,52 +241,46 @@ public class BooksService {
 
 	
 	
-/*public static String getOneUniversities(String id){
-		String output = null;
+    public  String getOneUniversities(String id){
+		
+                
 	try {
+            
+            File fXmlFile = new File("src/main/resources/public/unixml.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
 
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-            Document doc = factory.newDocumentBuilder().parse(new URL("C:\\Users\\Mansour\\Documents\\GitHub\\full-stack-web-project-mansouralsaleh\\src\\main\\resources\\public\\unixml.xml").openStream());
-
-
+            //optional, but recommended
+            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
+             NodeList nodes = doc.getElementsByTagName("University");
+                for (int i = 0; i < nodes.getLength(); i++) {
+                    Node node = nodes.item(i);
+                    Element element = (Element) node;
+                    String ids = element.getElementsByTagName("id").item(0).getTextContent();
+                    if(ids.equals(id)){
 
-
-            NodeList nodes = doc.getElementsByTagName("University");
-
-            for (int i = 0; i < nodes.getLength(); i++) {
-
-            Node node = nodes.item(i);
-
-
-            Element element = (Element) node;
-
-             if (id.equals(getValue("name", element))) {
-
-
-                    output = getValue("image", element) ;
-
-
-            }
-
-
-	}} catch (Exception ex) {
-
+                        Document document = node.getOwnerDocument();
+                        DOMImplementationLS domImplLS = (DOMImplementationLS) document
+                            .getImplementation();
+                        LSSerializer serializer = domImplLS.createLSSerializer();
+                        str = serializer.writeToString(node);
+                       
+                    }
+                } 
+	} catch (Exception ex) {
 	ex.printStackTrace();}
 	
 	
-	return output;
+	return str;
 	}
+    
         public static String getValue(String tag, Element element) {
         NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
         Node node = (Node) nodes.item(0);
         return node.getNodeValue();
-
         }
-    */
-
+    
+    
 }
