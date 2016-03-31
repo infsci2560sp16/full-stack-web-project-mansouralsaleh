@@ -22,6 +22,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.w3c.dom.ls.DOMImplementationLS;
+import org.w3c.dom.ls.LSSerializer;
 import org.xml.sax.InputSource;
 
 public class BooksService {
@@ -238,33 +240,38 @@ public class BooksService {
 
 	
 	
-    public static String getOneUniversities(String id){
-		String output="hahaha";
-                String xml =null;
+    public static String getOneUniversities(String uniname){
+		
+                String str =null;
 	try {
-            BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/public/unixml.xml")));
-            String line;
-            StringBuilder sb = new StringBuilder();
+            File fXmlFile = new File("src/main/resources/public/unixml.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
 
-            while((line=br.readLine())!= null){
-                sb.append(line.trim());
-            }
-            xml= sb.toString();
-            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-            .parse(new InputSource(new StringReader(xml)));
-            NodeList nodes = doc.getElementsByTagName("University");
-            for (int i = 0; i < nodes.getLength(); i++) {
-            Node node = nodes.item(i);
-            Element element = (Element) node;
-             if (id.equals(getValue("name", element))) {
-                    output = getValue("image", element) ;
-                    output="hahaha";
-            }
-	}} catch (Exception ex) {
+            //optional, but recommended
+            //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+            doc.getDocumentElement().normalize();
+             NodeList nodes = doc.getElementsByTagName("University");
+                for (int i = 0; i < nodes.getLength(); i++) {
+                    Node node = nodes.item(i);
+                    Element element = (Element) node;
+                    String name = element.getElementsByTagName("name").item(0).getTextContent();
+                    if(name.equals(uniname)){
+
+                        Document document = node.getOwnerDocument();
+                        DOMImplementationLS domImplLS = (DOMImplementationLS) document
+                            .getImplementation();
+                        LSSerializer serializer = domImplLS.createLSSerializer();
+                        str = serializer.writeToString(node);
+                       
+                    }
+                } 
+	} catch (Exception ex) {
 	ex.printStackTrace();}
 	
 	
-	return xml;
+	return str;
 	}
         public static String getValue(String tag, Element element) {
         NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
