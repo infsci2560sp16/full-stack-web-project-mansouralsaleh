@@ -237,7 +237,7 @@ public class BooksService {
 	
 	
     public static String getOneUniversities(String id){
-		String output = null;
+		String output ;
 	try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
