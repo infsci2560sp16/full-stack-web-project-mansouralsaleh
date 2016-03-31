@@ -73,7 +73,8 @@ function myFunction(xml) {
 	var size = xmlDoc.getElementsByTagName('name').length;
 	var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
 	var scname = xmlDoc.getElementsByTagName("schoolname")[0].childNodes[0].nodeValue;
-	document.getElementById("x").innerHTML =name+scname;
+	var majorname = xmlDoc.getElementsByTagName("majorname")[0].childNodes[0].nodeValue;
+	document.getElementById("x").innerHTML =name+scname+majorname;
 	/*for(i=0; i<size; i++){
 		console.log("Counter ="+counter+",,,,case i ="+ i);
 		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
