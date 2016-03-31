@@ -242,7 +242,7 @@ public class BooksService {
 	
     public static String getOneUniversities(String uniname){
 		
-                String str =null;
+                
 	try {
             File fXmlFile = new File("src/main/resources/public/unixml.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -253,6 +253,7 @@ public class BooksService {
             //read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
             doc.getDocumentElement().normalize();
              NodeList nodes = doc.getElementsByTagName("University");
+             String str = "x";
                 for (int i = 0; i < nodes.getLength(); i++) {
                     Node node = nodes.item(i);
                     Element element = (Element) node;
@@ -267,12 +268,13 @@ public class BooksService {
                        
                     }
                 } 
+            return str;
 	} catch (Exception ex) {
-	ex.printStackTrace();}
-	
-	
-	return str;
+	ex.printStackTrace();
+        return null;}
+
 	}
+    
         public static String getValue(String tag, Element element) {
         NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
         Node node = (Node) nodes.item(0);
