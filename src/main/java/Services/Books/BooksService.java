@@ -17,10 +17,12 @@ import java.lang.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class BooksService {
     private static HashMap<String, String> book ;
@@ -252,9 +254,9 @@ public class BooksService {
             output="hahaha";
              if (id.equals(getValue("name", element))) {
                     output = getValue("image", element) ;
-                    output="hahaha";
+                    output=output+"hahaha";
             }
-	}} catch (Exception ex) {
+	}} catch (ParserConfigurationException | IOException | SAXException ex) {
 	ex.printStackTrace();}
 	
 	
