@@ -30,7 +30,7 @@ public class BooksService {
     
     public BooksService(){
         
-       // saveListToFile();
+       saveListToFile();
     }
     public List<HashMap<String,String>> getAllBooks(){
         return readCurrentList();
