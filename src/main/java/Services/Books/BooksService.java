@@ -242,7 +242,7 @@ public class BooksService {
 	
     public  String getOneUniversities(String id){
 		
-                String str =null;
+                String str =id;
 	try {
             File fXmlFile = new File("src/main/resources/public/unixml.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
