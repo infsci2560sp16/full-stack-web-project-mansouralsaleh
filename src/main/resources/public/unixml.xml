@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<Universities xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:5000 uni.xsd">
+<Universities xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://nameless-mountain-5787.herokuapp.com uni.xsd">
 	<University>
 		<name>University of Pitssburgh</name>
 		<image>pitt.png</image>
