@@ -17,12 +17,10 @@ import java.lang.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.ParserConfigurationException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 public class BooksService {
     private static HashMap<String, String> book ;
@@ -245,18 +243,17 @@ public class BooksService {
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
-            Document doc = factory.newDocumentBuilder().parse(new URL("https://nameless-mountain-5787.herokuapp.com/unixml.xml").openStream());
+            Document doc = factory.newDocumentBuilder().parse(new URL("src/main/resources/public/unixml.xml").openStream());
             doc.getDocumentElement().normalize();
             NodeList nodes = doc.getElementsByTagName("University");
             for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
             Element element = (Element) node;
-            output="hahaha";
              if (id.equals(getValue("name", element))) {
                     output = getValue("image", element) ;
-                    output=output+"hahaha";
+                    output="hahaha";
             }
-	}} catch (ParserConfigurationException | IOException | SAXException ex) {
+	}} catch (Exception ex) {
 	ex.printStackTrace();}
 	
 	
