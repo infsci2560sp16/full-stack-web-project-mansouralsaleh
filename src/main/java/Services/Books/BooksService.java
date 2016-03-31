@@ -188,13 +188,13 @@ public class BooksService {
         return 0;
     }
 
-    public List<HashMap<String,String>> readCurrentList() throws IOException {
+    public List<HashMap<String,String>> readCurrentList() {
         String filename = "Book_entries.json";
         File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");   
         List<HashMap<String,String>> Book = null;
-        
+       
             Gson gson = new Gson();
-
+           try {
             BufferedReader buffReader = new BufferedReader(new FileReader(file));
             String line;
             String jsonString= "";
@@ -207,7 +207,9 @@ public class BooksService {
 		}.getType();
 		Book = gson.fromJson(jsonString, collectionType);
                 return Book;
-        
+        } catch (IOException e) {
+            return Book;
+        }
         
     }
     
