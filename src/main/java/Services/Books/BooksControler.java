@@ -2,9 +2,17 @@ package Services.Books;
 
 import com.google.gson.Gson;
 import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Map;
 import static spark.Spark.*;
 
+import spark.Request;
+import spark.Response;
+import spark.Route;
+
+import com.heroku.sdk.jdbc.DatabaseUrl;
 import java.util.List;
+import spark.Request;
 
 public class BooksControler {
     private static List<HashMap<String, String>> arrayList ;
@@ -14,8 +22,10 @@ public class BooksControler {
        
         
         get("/Books", (req, res) -> {
+
            
             return booksService.getAllBooks();
+
         }, gson::toJson);
 
         get("/Books/:id", (req, res) -> {
@@ -32,6 +42,7 @@ public class BooksControler {
         post("/Book", (req, res) -> {
             try 
         {
+            Integer bookID = booksService.getNumberOfBooks()+1;
             String bookname = req.queryParams("name");
             String bookauthors = req.queryParams("authors");
             String bookcondition = req.queryParams("condition");
@@ -51,6 +62,7 @@ public class BooksControler {
             return e;
              }
 	}, gson::toJson);
+
         
         
       /*  get("/Universitys", (req, res) -> {
@@ -77,6 +89,7 @@ public class BooksControler {
  
 	
 	});*/
+
     
     }
 
