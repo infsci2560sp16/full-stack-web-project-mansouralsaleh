@@ -190,7 +190,7 @@ public class BooksService {
 
     public String readCurrentList() {
         String filename = "Book_entries.json";
-        File file = new File("src\\main\\resources\\public",filename);   
+        File file = new File("src/main/resources/public",filename);   
         List<HashMap<String,String>> Book = null;
        
             Gson gson = new Gson();
