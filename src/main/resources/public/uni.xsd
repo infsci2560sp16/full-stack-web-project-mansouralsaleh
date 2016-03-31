@@ -6,6 +6,7 @@
         <xs:element name="University" maxOccurs="unbounded" minOccurs="0">
           <xs:complexType>
             <xs:sequence>
+			  <xs:element type="xs:string" name="id"/>
               <xs:element type="xs:string" name="name"/>
               <xs:element type="xs:string" name="image"/>
               <xs:element name="schools">
