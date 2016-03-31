@@ -90,10 +90,9 @@ function myFunction(xml) {
 		divBook.setAttribute("class", "col-u col-m-u colu books 1");
 		divBook.setAttribute("id", i);
 		div.appendChild(divBook);
-		var id = xmlDoc.getElementsByTagName("id")[i].childNodes[0].nodeValue;
 		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
 		var img = xmlDoc.getElementsByTagName("image")[i].childNodes[0].nodeValue;
-		document.getElementById(i).innerHTML =  '<a href="university.html?id='+id+'" ><img src="images/'+img+'"'+
+		document.getElementById(i).innerHTML =  '<a href="university.html?name='+name+'" ><img src="images/'+img+'"'+
 		'alt="'+name+'"><h2>'+name+'</h2></a>';
 
 
