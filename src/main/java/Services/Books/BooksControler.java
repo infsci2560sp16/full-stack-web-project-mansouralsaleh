@@ -68,7 +68,7 @@ public class BooksControler {
             String result =booksService.getOneUniversities(id);
 
                 if (result != null){
-                    res.type("text/xml");
+                    
                     return  result;
                 }
 		else {
