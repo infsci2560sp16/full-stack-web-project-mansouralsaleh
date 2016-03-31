@@ -249,6 +249,7 @@ public class BooksService {
             File fXmlFile = new File("src/main/resources/public/unixml.xml");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        dbFactory.setNamespaceAware(true);
 	Document doc = dBuilder.parse(fXmlFile);
 	doc.getDocumentElement().normalize();
 
