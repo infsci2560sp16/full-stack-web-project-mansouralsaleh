@@ -16,7 +16,6 @@ public class BooksControler {
         get("/Books", (req, res) -> {
            
             return booksService.getAllBooks();
-            
         }, gson::toJson);
 
         get("/Books/:id", (req, res) -> {
@@ -54,7 +53,7 @@ public class BooksControler {
 	}, gson::toJson);
         
         
-        get("/Universitys", (req, res) -> {
+      /*  get("/Universitys", (req, res) -> {
             try 
         {
             res.type("text/xml");
@@ -77,7 +76,7 @@ public class BooksControler {
 		} 
  
 	
-	});
+	});*/
     
     }
 
