@@ -57,36 +57,7 @@
 <div class="row">
   <div class="col-2 col-m-1 space">
   </div>
-  <script>
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        myFunction(xhttp);
-    }
-};
-var id = GetURLParameter('id');
-xhttp.open("GET", "/Universitys/"+id, true);
-xhttp.send();
 
-function myFunction(xml) {
-    var xmlDoc = xml.responseXML;
-		var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-
-	document.getElementById("x").innerHTML =name;
-	/*for(i=0; i<size; i++){
-		console.log("Counter ="+counter+",,,,case i ="+ i);
-		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
-		var img = xmlDoc.getElementsByTagName("image")[i].childNodes[0].nodeValue;
-		document.getElementById(i).innerHTML =  '<a href="university.html?name='+name+'" ><img src="images/'+img+'"'+
-		'alt="'+name+'"><h2>'+name+'</h2></a>';
-
-
-		
-	}*/
-	
-
-}
-        </script>
   <div class="col-8 col-m-10 " id="x">
   <h1>Browse by Schools</h1>
   
