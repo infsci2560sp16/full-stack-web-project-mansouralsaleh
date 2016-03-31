@@ -58,7 +58,7 @@ public class BooksControler {
 	}, gson::toJson);
         
         
-        get("/Universitys", (req, res) -> {
+       /* get("/Universitys", (req, res) -> {
             try 
         {
             res.type("text/xml");
@@ -67,7 +67,7 @@ public class BooksControler {
             return e;
              }
         });
-       /* get("/Universitys/:name", (req, res) -> {
+        get("/Universitys/:name", (req, res) -> {
          
             String id = req.params(":name");
             String result =booksService.getOneUniversities(id);
