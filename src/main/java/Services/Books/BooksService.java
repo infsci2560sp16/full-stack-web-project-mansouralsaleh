@@ -28,6 +28,7 @@ import org.xml.sax.InputSource;
 
 public class BooksService {
     private static HashMap<String, String> book ;
+    private String str;
     private static List<HashMap<String,String>> arrayList ;
      private static ArrayList<Books> BooksList ;
     private LinkedList<Integer> BooksIDs  = new LinkedList<>();// {"00001", "00002"};
@@ -242,8 +243,9 @@ public class BooksService {
 	
     public  String getOneUniversities(String id){
 		
-                String str =id;
+                
 	try {
+            
             File fXmlFile = new File("src/main/resources/public/unixml.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
