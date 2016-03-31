@@ -71,9 +71,8 @@ xhttp.send();
 function myFunction(xml) {
     var xmlDoc = xml.responseXML;
 	var size = xmlDoc.getElementsByTagName('name').length;
-	var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-	//var name = xmlDoc.getElementsByTagName("schbools")[0].childNodes[0].childNodes[0].nodeValue;
-	document.getElementById("x").innerHTML =name
+	var name = xmlDoc.getElementsByTagName("schbools")[0].childNodes[0].childNodes[0].nodeValue;
+	document.getElementById("x").innerHTML =name;
 	/*for(i=0; i<size; i++){
 		console.log("Counter ="+counter+",,,,case i ="+ i);
 		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
