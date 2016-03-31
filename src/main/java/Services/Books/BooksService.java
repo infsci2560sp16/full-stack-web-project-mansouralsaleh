@@ -246,7 +246,7 @@ public class BooksService {
             Document doc = factory.newDocumentBuilder().parse(new URL("http://nameless-mountain-5787.herokuapp.com/unixml.xml").openStream());
             doc.getDocumentElement().normalize();*/
             
-            File fXmlFile = new File("src/main/resources/public/unixml.xml");
+            File fXmlFile = new File("/src/main/resources/public/unixml.xml");
 	DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 	DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         dbFactory.setNamespaceAware(true);
