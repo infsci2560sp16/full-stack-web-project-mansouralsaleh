@@ -239,11 +239,11 @@ public class BooksService {
     public static String getOneUniversities(String id){
 		String output = null;
 	try {
+            File fXmlFile = new File("/src/main/resources/public/unixml.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-            Document doc = factory.newDocumentBuilder().parse(new URL("http://nameless-mountain-5787.herokuapp.com/unixml.xml").openStream());
+            Document doc = dBuilder.parse(fXmlFile);
+            
             doc.getDocumentElement().normalize();
             NodeList nodes = doc.getElementsByTagName("University");
             for (int i = 0; i < nodes.getLength(); i++) {
