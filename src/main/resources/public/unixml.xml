@@ -55,16 +55,16 @@
 		<image>cmu.jpg</image>
 		<schools>
 			<school>
-				<schoolname>School of Information Science</schoolname>
+				<schoolname>A</schoolname>
 				<majors>
 					<major>
-						<majorname>Information Science</majorname>
+						<majorname>major 1</majorname>
 					</major>
 					<major>
-						<majorname>Telecomunication</majorname>
+						<majorname>major 2</majorname>
 					</major>
 					<major>
-						<majorname>Library and Information Science</majorname>
+						<majorname>major 3</majorname>
 					</major>
 				</majors>
 			</school>
