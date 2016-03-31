@@ -15,7 +15,7 @@ public class BooksControler {
         
         get("/Books", (req, res) -> {
            
-            return "hi";
+            return booksService.getAllBooks();
         }, gson::toJson);
 
         get("/Books/:id", (req, res) -> {
