@@ -1,10 +1,14 @@
 package Services.Books;
 
 import com.google.gson.Gson;
+import java.util.ArrayList;
 import java.util.HashMap;
 import static spark.Spark.*;
 
 import java.util.List;
+import java.util.Map;
+import spark.ModelAndView;
+import spark.template.freemarker.FreeMarkerEngine;
 
 public class BooksControler {
     private static List<HashMap<String, String>> arrayList ;
@@ -77,6 +81,14 @@ public class BooksControler {
  
 	
 	});
+        
+        get("/test", (request, response) -> {
+            List<HashMap<String, String>> attributes = new ArrayList<HashMap<String, String>>();
+             attributes=booksService.getAllBooks();
+            
+
+            return new ModelAndView(attributes, "test.ftl");
+        }, new FreeMarkerEngine());
     
     }
 
