@@ -8,6 +8,8 @@
 <title>Choose a University --- Tabadul</title>
 <link rel="stylesheet" type="text/css" href="./stylesheets/mainsheet1.css">
 <script src="./js/javascript.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
 </head>
 
 <body onload="init();">
@@ -51,110 +53,76 @@
 </form>
   </div>
  </div>
- <div class="row top">
+ <div class="row top" id="beforeContent">
+ </div>
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        myFunction(xhttp);
+    }
+};
+xhttp.open("GET", "/Universitys", true);
+xhttp.send();
 
-</div>
-	<div class="row">
-	  <div class="col-1 col-m-1 colxmv books">
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+	var size = xmlDoc.getElementsByTagName('name').length;
 
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/pitt.png" alt="pitt logo">
-			<h2>University of Pittsburgh</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/cmu.jpg" alt="CMU logo">
-			<h2>Carnegie Mellon University</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/logo-duquesne-university.jpg" alt="logo-duquesne-university.jpg">
-			<h2>Duquesne University</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/Robert_Morris_University_logo.png" alt="Robert_Morris_University_logo.png">
-			<h2>Robert Morris University</h2>
-		</a>
-	  </div>
+	var divBefore="";
+	var counter=1;
+	for(i=0; i<size; i++){
+		if(i == 0){
+				var referenceNode = document.getElementById('beforeContent');
+				console.log("case i = 0,,,"+ i);
+				var div = document.createElement("div");
+				div.setAttribute("class", "row");
+				div.setAttribute("id", "row"+i);
+				divBefore="row"+i;
+				referenceNode.parentNode.insertBefore(div, referenceNode.nextSibling);
+				var divLeft = document.createElement("div");
+				divLeft.setAttribute("class", "col-1 col-m-1 colxmv books left");
+				div.appendChild(divLeft);
+		}
 
-	  <div class="col-1 col-m-1 colxmv books">
+		console.log("Counter ="+counter+",,,,case i ="+ i);
+		var divBook = document.createElement("div");
+		divBook.setAttribute("class", "col-u col-m-u colu books 1");
+		divBook.setAttribute("id", i);
+		div.appendChild(divBook);
+		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+		var img = xmlDoc.getElementsByTagName("image")[i].childNodes[0].nodeValue;
+		document.getElementById(i).innerHTML =  '<a href="university.html?name='+name+'" ><img src="images/'+img+'"'+
+		'alt="'+name+'"><h2>'+name+'</h2></a>';
 
-	  </div>
-	</div>
+
+		if(counter==4){
+			console.log("counter 4,,,,,i="+ i);
+			var divRight = document.createElement("div");
+			divRight.setAttribute("class", "col-1 col-m-1 colxmv books right");
+			div.appendChild(divRight);
+			var referenceNode = document.getElementById(divBefore);
+
+			var div = document.createElement("div");
+			div.setAttribute("class", "row");
+			div.setAttribute("id", "row"+i);
+			referenceNode.parentNode.insertBefore(div, referenceNode.nextSibling);
+			divBefore="row"+i;
+			var divLeft = document.createElement("div");
+			divLeft.setAttribute("class", "col-1 col-m-1 colxmv books left");
+			div.appendChild(divLeft);
+			counter=0;
+		}
+		counter++;
+	}
+	var divRight = document.createElement("div");
+	divRight.setAttribute("class", "col-1 col-m-1 colxmv books right");
+	div.appendChild(divRight);
+
+}
+        </script>
+
 	
-	<div class="row">
-	  <div class="col-1 col-m-1 colxmv books">
-
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-
-	  <div class="col-1 col-m-1 colxmv books">
-
-	  </div>
-	</div>
-
-	<div class="row">
-	  <div class="col-1 col-m-1 colxmv books">
-
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-	  <div class="col-u col-m-u colu books">
-		<a href="university.html" >
-			<img src="images/uni.png" alt="uni">
-			<h2>University Name</h2>
-		</a>
-	  </div>
-
-	  <div class="col-1 col-m-1 colxmv books">
-
-	  </div>
-	</div>
 	<div class="row footer">
   <div class="col-6 col-m-6 footerCenter">
 		<h2>Tabadul</h2>

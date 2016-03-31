@@ -2,17 +2,9 @@ package Services.Books;
 
 import com.google.gson.Gson;
 import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.Map;
 import static spark.Spark.*;
 
-import spark.Request;
-import spark.Response;
-import spark.Route;
-
-import com.heroku.sdk.jdbc.DatabaseUrl;
 import java.util.List;
-import spark.Request;
 
 public class BooksControler {
     private static List<HashMap<String, String>> arrayList ;
@@ -23,28 +15,31 @@ public class BooksControler {
         
         get("/Books", (req, res) -> {
             try 
-        {
-            return booksService.getAllBooks();
+            {
+                return booksService.getAllBooks();
             } catch (Exception e) {
-            return e;
-             }
+                return e;
+            }
         }, gson::toJson);
 
         get("/Books/:id", (req, res) -> {
-            Integer id = Integer.parseInt(req.params(":id"));
-			 
-            arrayList=booksService.getOneBook(id);
-            if (!arrayList.isEmpty()) {
-		return arrayList;
+            try {
+                Integer id = Integer.parseInt(req.params(":id"));
+                
+                arrayList = booksService.getOneBook(id);
+                if (!arrayList.isEmpty()) {
+                    return arrayList;
+                }
+                
+                return "[{\"" + id + "\":\"Could not find the book you search for please try again. \"}]";
+            } catch (Exception e) {
+                return e;
             }
-			
-            return "[{\"" + id + "\":\"Could not find the book you search for please try again. \"}]";
 	}, gson::toJson);
         
         post("/Book", (req, res) -> {
             try 
         {
-            Integer bookID = booksService.getNumberOfBooks()+1;
             String bookname = req.queryParams("name");
             String bookauthors = req.queryParams("authors");
             String bookcondition = req.queryParams("condition");
@@ -56,7 +51,7 @@ public class BooksControler {
             String bookISBN10 = req.queryParams("ISBN10");
             String bookimg = req.queryParams("img");
             
-            booksService.createBook(bookID, bookname, bookauthors, bookcondition, bookuniversity, bookschool,
+            booksService.createBook(bookname, bookauthors, bookcondition, bookuniversity, bookschool,
                     bookcourse, bookISBN13, bookISBN10, bookimg, bookdescription);
             res.redirect("/index.html");
             return "";
@@ -64,6 +59,32 @@ public class BooksControler {
             return e;
              }
 	}, gson::toJson);
+        
+        
+        get("/Universitys", (req, res) -> {
+            try 
+        {
+            res.type("text/xml");
+            return booksService.getAllUniversities();
+            } catch (Exception e) {
+            return e;
+             }
+        });
+       /* get("/Universitys/:name", (req, res) -> {
+         
+            String id = req.params(":name");
+            String result =booksService.getOneUniversities(id);
+
+                if (result != null){
+                    res.type("text/xml");
+                    return  result;
+                }
+		else {
+			return "error occured!!" + id;
+		} 
+ 
+	
+	});*/
     
     }
 

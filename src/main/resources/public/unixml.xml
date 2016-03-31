@@ -1,0 +1,258 @@
+<?xml version="1.0"?>
+<Universities xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://localhost:5000 uni.xsd">
+	<University>
+		<name>University of Pitssburgh</name>
+		<image>pitt.png</image>
+		<schools>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Education</schoolname>
+				<majors>
+					<major>
+						<majorname>Administrative and Policy Studies</majorname>
+					</major>
+					<major>
+						<majorname>Health and Physical Activity</majorname>
+					</major>
+					<major>
+						<majorname>Instruction and Learning</majorname>
+					</major>
+					<major>
+						<majorname>Psychology in Education</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+		</schools>
+	</University>
+	<University>
+		<name>Carnegie Mellon University</name>
+		<image>cmu.jpg</image>
+		<schools>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Education</schoolname>
+				<majors>
+					<major>
+						<majorname>Administrative and Policy Studies</majorname>
+					</major>
+					<major>
+						<majorname>Health and Physical Activity</majorname>
+					</major>
+					<major>
+						<majorname>Instruction and Learning</majorname>
+					</major>
+					<major>
+						<majorname>Psychology in Education</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+		</schools>
+	</University>
+	<University>
+		<name>Duquesne University</name>
+		<image>logo-duquesne-university.jpg</image>
+		<schools>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Education</schoolname>
+				<majors>
+					<major>
+						<majorname>Administrative and Policy Studies</majorname>
+					</major>
+					<major>
+						<majorname>Health and Physical Activity</majorname>
+					</major>
+					<major>
+						<majorname>Instruction and Learning</majorname>
+					</major>
+					<major>
+						<majorname>Psychology in Education</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+		</schools>
+	</University>
+	<University>
+		<name>Robert Morris University</name>
+		<image>Robert_Morris_University_logo.png</image>
+		<schools>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Education</schoolname>
+				<majors>
+					<major>
+						<majorname>Administrative and Policy Studies</majorname>
+					</major>
+					<major>
+						<majorname>Health and Physical Activity</majorname>
+					</major>
+					<major>
+						<majorname>Instruction and Learning</majorname>
+					</major>
+					<major>
+						<majorname>Psychology in Education</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+		</schools>
+	</University>
+	<University>
+		<name>University Name</name>
+		<image>uni.png</image>
+		<schools>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Education</schoolname>
+				<majors>
+					<major>
+						<majorname>Administrative and Policy Studies</majorname>
+					</major>
+					<major>
+						<majorname>Health and Physical Activity</majorname>
+					</major>
+					<major>
+						<majorname>Instruction and Learning</majorname>
+					</major>
+					<major>
+						<majorname>Psychology in Education</majorname>
+					</major>
+				</majors>
+			</school>
+			<school>
+				<schoolname>School of Information Science</schoolname>
+				<majors>
+					<major>
+						<majorname>Information Science</majorname>
+					</major>
+					<major>
+						<majorname>Telecomunication</majorname>
+					</major>
+					<major>
+						<majorname>Library and Information Science</majorname>
+					</major>
+				</majors>
+			</school>
+		</schools>
+	</University>
+</Universities>
