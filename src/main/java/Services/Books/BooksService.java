@@ -58,10 +58,10 @@ public class BooksService {
         
        // saveListToFile();
     }
-    public List<HashMap<String,String>> getAllBooks(){
+    public String getAllBooks(){
         return readCurrentList();
     }
-    
+    /*
     public List<HashMap<String,String>> getOneBook(Integer id){
         List<HashMap<String,String>> Books = readCurrentList();
         Integer size = Books.size();
@@ -123,7 +123,7 @@ public class BooksService {
                 
             }  
         }
-    
+    */
     public Integer getNumberOfBooks(){
         int size = BooksIDs.size();
         return size;
@@ -188,7 +188,7 @@ public class BooksService {
         return 0;
     }
 
-    public List<HashMap<String,String>> readCurrentList() {
+    public String readCurrentList() {
         String filename = "Book_entries.json";
         File file = new File("https://nameless-mountain-5787.herokuapp.com/",filename);   
         List<HashMap<String,String>> Book = null;
@@ -202,13 +202,13 @@ public class BooksService {
                 jsonString= jsonString+line;
             }
             buffReader.close();
-            @SuppressWarnings("serial")
-		Type collectionType = new TypeToken<List<HashMap<String,String>>>() {
-		}.getType();
-		Book = gson.fromJson(jsonString, collectionType);
-                return Book;
+            //@SuppressWarnings("serial")
+		//Type collectionType = new TypeToken<List<HashMap<String,String>>>() {
+		//}.getType();
+		//Book = gson.fromJson(jsonString, collectionType);
+                return jsonString;
         } catch (IOException e) {
-            return Book;
+            return e.toString();
         }
         
     }
