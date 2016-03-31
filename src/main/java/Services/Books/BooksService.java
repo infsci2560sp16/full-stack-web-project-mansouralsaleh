@@ -58,8 +58,8 @@ public class BooksService {
         
        // saveListToFile();
     }
-    public String getAllBooks(){
-        return "xx";
+    public List<HashMap<String,String>> getAllBooks(){
+        return readCurrentList();
     }
     
     public List<HashMap<String,String>> getOneBook(Integer id){
@@ -190,7 +190,7 @@ public class BooksService {
 
     public List<HashMap<String,String>> readCurrentList() {
         String filename = "Book_entries.json";
-        File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");   
+        File file = new File("https://nameless-mountain-5787.herokuapp.com/",filename);   
         List<HashMap<String,String>> Book = null;
        
             Gson gson = new Gson();
