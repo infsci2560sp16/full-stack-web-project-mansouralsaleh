@@ -143,7 +143,7 @@ title="Must contain at least one number and one letter, and at least 8 or more c
 <div class="row footer">
   <div class="col-6 col-m-6 footerCenter">
   <#list aboutpart as part>
-		${content}
+		${part}
 	</#list>
 		</div>
   </div>
