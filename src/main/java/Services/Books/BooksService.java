@@ -7,17 +7,20 @@ import com.google.common.collect.Lists;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.lang.reflect.Type;
-import java.util.Map.Entry;
+import java.net.*;
+import java.lang.*;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class BooksService {
     private static HashMap<String, String> book ;
@@ -212,5 +215,54 @@ public class BooksService {
         }
         
     }
+    public String getAllUniversities(){
+
+        try {
+            //filename is filepath string
+            BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/public/unixml.xml")));
+            String line;
+            StringBuilder sb = new StringBuilder();
+
+            while((line=br.readLine())!= null){
+                sb.append(line.trim());
+            }
+            return sb.toString();
+        }
+        catch (Exception e) {
+            return e.toString();
+        }
+    }
+	
+
+	
+	
+    public static String getOneUniversities(String id){
+		String output = null;
+	try {
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setNamespaceAware(true);
+            Document doc = factory.newDocumentBuilder().parse(new URL("src/main/resources/public/unixml.xml").openStream());
+            doc.getDocumentElement().normalize();
+            NodeList nodes = doc.getElementsByTagName("University");
+            for (int i = 0; i < nodes.getLength(); i++) {
+            Node node = nodes.item(i);
+            Element element = (Element) node;
+             if (id.equals(getValue("name", element))) {
+                    output = getValue("image", element) ;
+            }
+	}} catch (Exception ex) {
+	ex.printStackTrace();}
+	
+	
+	return output;
+	}
+        public static String getValue(String tag, Element element) {
+        NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
+        Node node = (Node) nodes.item(0);
+        return node.getNodeValue();
+        }
+    
     
 }
