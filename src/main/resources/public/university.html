@@ -74,14 +74,16 @@ var string;
 	var size = xmlDoc.getElementsByTagName('schoolname').length;
 	var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
 	string="<h1>Browse by Schools</h1><h2>"+name+"</h2>";
+	var k=0;
 	for(i=0; i<size; i++){
 		var scname = xmlDoc.getElementsByTagName("schoolname")[i].childNodes[0].nodeValue;
 		
-		
+		var
 		string = string+'<div class="university"><h2>'+scname+"</h2>";
 		for(j=0; j<3; j++){
-			var majorname = xmlDoc.getElementsByTagName("majorname")[j].childNodes[0].nodeValue;
+			var majorname = xmlDoc.getElementsByTagName("majorname")[k].childNodes[0].nodeValue;
 			string = string+'<a href="#"><h3>'+majorname+'</h3></a>';
+			k++;
 		}
 		string = string+'</div>';
 	}
