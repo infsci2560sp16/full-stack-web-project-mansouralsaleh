@@ -18,7 +18,7 @@ public class BooksControler {
             return booksService.getAllBooks(); 
         }, gson::toJson);
 
-      /* get("/Books/:id", (req, res) -> {
+       get("/Books/:id", (req, res) -> {
             Integer id = Integer.parseInt(req.params(":id"));
 			 
             arrayList=booksService.getOneBook(id);
