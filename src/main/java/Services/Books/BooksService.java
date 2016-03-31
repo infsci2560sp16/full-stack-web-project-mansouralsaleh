@@ -240,6 +240,7 @@ public class BooksService {
 	
     public static String getOneUniversities(String id){
 		String output="hahaha";
+                String xml =null;
 	try {
             BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/public/unixml.xml")));
             String line;
@@ -248,7 +249,7 @@ public class BooksService {
             while((line=br.readLine())!= null){
                 sb.append(line.trim());
             }
-            String xml = sb.toString();
+            xml= sb.toString();
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
             .parse(new InputSource(new StringReader(xml)));
             NodeList nodes = doc.getElementsByTagName("University");
@@ -263,7 +264,7 @@ public class BooksService {
 	ex.printStackTrace();}
 	
 	
-	return output;
+	return xml;
 	}
         public static String getValue(String tag, Element element) {
         NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
