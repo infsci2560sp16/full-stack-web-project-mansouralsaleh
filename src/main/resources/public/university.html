@@ -73,7 +73,7 @@ var string;
     var xmlDoc = xml.responseXML;
 	var size = xmlDoc.getElementsByTagName('schoolname').length;
 	var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-	string="<h1>Browse by Schools</h1><h2>"+name+"</h2>"
+	string="<h1>Browse by Schools</h1><h2>"+name+"</h2>";
 	for(i=0; i<size; i++){
 		var scname = xmlDoc.getElementsByTagName("schoolname")[i].childNodes[0].nodeValue;
 		var msize = xmlDoc.getElementsByTagName('majorname').length;
