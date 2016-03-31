@@ -240,7 +240,7 @@ public class BooksService {
 
 	
 	
-    public  String getOneUniversities(String uniname){
+    public  String getOneUniversities(String id){
 		
                 String str =null;
 	try {
@@ -256,8 +256,8 @@ public class BooksService {
                 for (int i = 0; i < nodes.getLength(); i++) {
                     Node node = nodes.item(i);
                     Element element = (Element) node;
-                    String name = element.getElementsByTagName("name").item(0).getTextContent();
-                    if(name.equals(uniname)){
+                    String ids = element.getElementsByTagName("id").item(0).getTextContent();
+                    if(ids.equals(id)){
 
                         Document document = node.getOwnerDocument();
                         DOMImplementationLS domImplLS = (DOMImplementationLS) document

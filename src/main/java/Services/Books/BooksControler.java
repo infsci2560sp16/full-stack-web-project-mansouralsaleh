@@ -62,9 +62,9 @@ public class BooksControler {
             return e;
              }
         });
-        get("/Universitys/:name", (req, res) -> {
+        get("/Universitys/:id", (req, res) -> {
          
-            String id = req.params(":name");
+            String id = req.params(":id");
             String result =booksService.getOneUniversities(id);
 
                 if (result != null){
