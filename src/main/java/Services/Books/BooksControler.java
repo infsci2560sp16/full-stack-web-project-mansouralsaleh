@@ -14,24 +14,23 @@ public class BooksControler {
        
         
         get("/Books", (req, res) -> {
-            
-                return booksService.getAllBooks();
-           
+            try 
+        {
+            return booksService.getAllBooks();
+            } catch (Exception e) {
+            return e;
+             }
         }, gson::toJson);
 
         get("/Books/:id", (req, res) -> {
-            try {
-                Integer id = Integer.parseInt(req.params(":id"));
-                
-                arrayList = booksService.getOneBook(id);
-                if (!arrayList.isEmpty()) {
-                    return arrayList;
-                }
-                
-                return "[{\"" + id + "\":\"Could not find the book you search for please try again. \"}]";
-            } catch (Exception e) {
-                return e;
+            Integer id = Integer.parseInt(req.params(":id"));
+			 
+            arrayList=booksService.getOneBook(id);
+            if (!arrayList.isEmpty()) {
+		return arrayList;
             }
+			
+            return "[{\"" + id + "\":\"Could not find the book you search for please try again. \"}]";
 	}, gson::toJson);
         
         post("/Book", (req, res) -> {
@@ -67,7 +66,7 @@ public class BooksControler {
             return e;
              }
         });
-       /* get("/Universitys/:name", (req, res) -> {
+        get("/Universitys/:name", (req, res) -> {
          
             String id = req.params(":name");
             String result =booksService.getOneUniversities(id);
@@ -81,7 +80,7 @@ public class BooksControler {
 		} 
  
 	
-	});*/
+	});
     
     }
 

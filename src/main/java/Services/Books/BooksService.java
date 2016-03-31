@@ -37,31 +37,27 @@ public class BooksService {
     }
     
     public List<HashMap<String,String>> getOneBook(Integer id){
-        try {
-            List<HashMap<String, String>> Books = readCurrentList();
-            Integer size = Books.size();
-            arrayList = new ArrayList<HashMap<String, String>>();
-            for (int i = 0; i < size; i++) {
-                if (Books.get(i).get("BookID").equals(id.toString())) {
+        List<HashMap<String,String>> Books = readCurrentList();
+        Integer size = Books.size();
+        arrayList = new ArrayList<HashMap<String, String>>();
+        for (int i = 0; i<size; i++){
+            if(Books.get(i).get("BookID").equals(id.toString())){
                     book = new HashMap<String, String>();
-                    book.put("BookID", Books.get(i).get("BookID"));
-                    book.put("BookName", Books.get(i).get("BookName"));
-                    book.put("BookAuthors", Books.get(i).get("BookAuthors"));
-                    book.put("BookCondition", Books.get(i).get("BookCondition"));
-                    book.put("BookUniversity", Books.get(i).get("BookUniversity"));
-                    book.put("BookSchool", Books.get(i).get("BookSchool"));                    
-                    book.put("BookDescription", Books.get(i).get("BookDescription"));
-                    book.put("BookISBN13", Books.get(i).get("BookISBN13"));
-                    book.put("BookISBN10", Books.get(i).get("BookISBN10"));
-                    book.put("BookImages", Books.get(i).get("BookImages"));
-                    book.put("BookCourse", Books.get(i).get("BookCourse"));                    
-                    arrayList.add(book);                    
-                }
+                    book.put("BookID",Books.get(i).get("BookID"));
+                    book.put("BookName",Books.get(i).get("BookName"));
+                    book.put("BookAuthors",Books.get(i).get("BookAuthors"));
+                    book.put("BookCondition",Books.get(i).get("BookCondition"));
+                    book.put("BookUniversity",Books.get(i).get("BookUniversity"));
+                    book.put("BookSchool",Books.get(i).get("BookSchool"));  
+                    book.put("BookDescription",Books.get(i).get("BookDescription"));
+                    book.put("BookISBN13",Books.get(i).get("BookISBN13"));
+                    book.put("BookISBN10",Books.get(i).get("BookISBN10"));
+                    book.put("BookImages",Books.get(i).get("BookImages"));
+                    book.put("BookCourse",Books.get(i).get("BookCourse")); 
+                    arrayList.add(book);   
             }
-            return arrayList;
-        } catch (Exception e) {
-            return (List<HashMap<String, String>>) e;
         }
+        return arrayList;
     }
     
     public void createBook(String bookname, String bookauthors,
@@ -104,62 +100,58 @@ public class BooksService {
         
     //next two methods adopted from http://stackoverflow.com/questions/24573598/write-arraylist-of-custom-objects-to-file
     public int saveListToFile() {
+        Books book1 = new Books();
+        book1.setBookID(1);
+        book1.setBookName("Engineering Psychology and Human Performance");
+        book1.setBookAuthor("Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman");
+        book1.setBookCondition("New");
+        book1.setBookUniversity("University of Pittsburgh");
+        book1.setBookSchool("School of Information Science");
+        book1.setBookDescription("Forming connections between human performance and design Engineering Psychology and Human"
+            + " Performance, 4e examines human-machine interaction. The book is organized directly from the psychological "
+            + "perspective of human information processing. The chapters generally correspond to the flow of information as it is "
+            + "processed by a human being--from the senses, through the brain, to action--rather than from the perspective of "
+            + "system components or engineering design concepts. This book is ideal for a psychology student, engineering student, "
+            + "or actual practitioner in engineering psychology, human performance, and human factors Learning Goals Upon "
+            + "completing this book, readers should be able to: * Identify how human ability contributes to the design of "
+            + "technology. * Understand the connections within human information processing and human performance. * Challenge the"
+            + " way they think about technology's influence on human performance. * show how theoretical advances have been, or "
+            + "might be, applied to improving human-machine interaction");
+        book1.setBookISBN13("978-0205021987");
+        book1.setBookISBN10("0205021980");
+        book1.setBookImages("book1.jpg");
+        book1.setBookCourse("Human Factors in System Design");
+        
+        Books book2 = new Books();
+        book2.setBookID(2);
+        book2.setBookName("Some Book");
+        book2.setBookAuthor("Many Authors");
+        book2.setBookCondition("Used - Very Good");
+        book2.setBookUniversity("CMU");
+        book2.setBookSchool("CS");
+        book2.setBookDescription("Test Description");
+        book2.setBookISBN13("111-2233445566");
+        book2.setBookISBN10("1122334455");
+        book2.setBookImages("Book.JPG");
+        book2.setBookCourse("Course Name");
+
+        List<Books> Books = Lists.newArrayList(book1, book2);
+        Gson gson = new GsonBuilder().create();
+
+        String arrayListToJson = gson.toJson(Books);
+
+        String filename = "Book_entries.json";
+        File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");        	
+        file.delete();
         try {
-            Books book1 = new Books();
-            book1.setBookID(1);
-            book1.setBookName("Engineering Psychology and Human Performance");
-            book1.setBookAuthor("Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman");
-            book1.setBookCondition("New");
-            book1.setBookUniversity("University of Pittsburgh");
-            book1.setBookSchool("School of Information Science");
-            book1.setBookDescription("Forming connections between human performance and design Engineering Psychology and Human"
-                    + " Performance, 4e examines human-machine interaction. The book is organized directly from the psychological "
-                    + "perspective of human information processing. The chapters generally correspond to the flow of information as it is "
-                    + "processed by a human being--from the senses, through the brain, to action--rather than from the perspective of "
-                    + "system components or engineering design concepts. This book is ideal for a psychology student, engineering student, "
-                    + "or actual practitioner in engineering psychology, human performance, and human factors Learning Goals Upon "
-                    + "completing this book, readers should be able to: * Identify how human ability contributes to the design of "
-                    + "technology. * Understand the connections within human information processing and human performance. * Challenge the"
-                    + " way they think about technology's influence on human performance. * show how theoretical advances have been, or "
-                    + "might be, applied to improving human-machine interaction");
-            book1.setBookISBN13("978-0205021987");
-            book1.setBookISBN10("0205021980");
-            book1.setBookImages("book1.jpg");
-            book1.setBookCourse("Human Factors in System Design");
-            
-            Books book2 = new Books();
-            book2.setBookID(2);
-            book2.setBookName("Some Book");
-            book2.setBookAuthor("Many Authors");
-            book2.setBookCondition("Used - Very Good");
-            book2.setBookUniversity("CMU");
-            book2.setBookSchool("CS");
-            book2.setBookDescription("Test Description");
-            book2.setBookISBN13("111-2233445566");
-            book2.setBookISBN10("1122334455");
-            book2.setBookImages("Book.JPG");
-            book2.setBookCourse("Course Name");
-            
-            List<Books> Books = Lists.newArrayList(book1, book2);
-            Gson gson = new GsonBuilder().create();
-            
-            String arrayListToJson = gson.toJson(Books);
-            
-            String filename = "Book_entries.json";
-            File file = new File("https://nameless-mountain-5787.herokuapp.com/Book_entries.json");            
-            file.delete();
-            try {
-                BufferedWriter buffWriter = new BufferedWriter(new FileWriter(file, true));
-                buffWriter.append(arrayListToJson);
-                buffWriter.newLine();
-                buffWriter.close();
-            } catch (IOException e) {
-                return -1;
-            }
-            return 0;
-        } catch (Exception e) {
-            return 0;
+            BufferedWriter buffWriter = new BufferedWriter(new FileWriter(file, true));
+            buffWriter.append(arrayListToJson);
+            buffWriter.newLine();
+            buffWriter.close();
+        } catch (IOException e) {
+            return -1;
         }
+        return 0;
     }
 
     public List<HashMap<String,String>> readCurrentList() {
@@ -190,7 +182,7 @@ public class BooksService {
 
         try {
             //filename is filepath string
-            BufferedReader br = new BufferedReader(new FileReader(new File("https://nameless-mountain-5787.herokuapp.com/unixml.xml")));
+            BufferedReader br = new BufferedReader(new FileReader(new File("C:\\Users\\Mansour\\Documents\\GitHub\\full-stack-web-project-mansouralsaleh\\src\\main\\resources\\public\\unixml.xml")));
             String line;
             StringBuilder sb = new StringBuilder();
 
@@ -203,11 +195,17 @@ public class BooksService {
             return e.toString();
         }
     }
+
+    public static Document loadTestDocument(String url) throws Exception {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        factory.setNamespaceAware(true);
+        return factory.newDocumentBuilder().parse(new URL(url).openStream());
+    }
 	
 
 	
 	
-/*public static String getOneUniversities(String id){
+public static String getOneUniversities(String id){
 		String output = null;
 	try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -247,11 +245,10 @@ public class BooksService {
 	
 	return output;
 	}
-        public static String getValue(String tag, Element element) {
-        NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
-        Node node = (Node) nodes.item(0);
-        return node.getNodeValue();
+public static String getValue(String tag, Element element) {
+NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
+Node node = (Node) nodes.item(0);
+return node.getNodeValue();
 
-        }
-    */
+}
 }
