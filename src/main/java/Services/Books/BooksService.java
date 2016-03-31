@@ -58,8 +58,8 @@ public class BooksService {
         
        // saveListToFile();
     }
-    public List<HashMap<String,String>> getAllBooks(){
-        return readCurrentList();
+    public String getAllBooks(){
+        return "xx";
     }
     
     public List<HashMap<String,String>> getOneBook(Integer id){
