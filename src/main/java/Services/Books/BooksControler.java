@@ -83,11 +83,17 @@ public class BooksControler {
 	});
         
         get("/test", (request, response) -> {
-            List<HashMap<String, String>> attributes = new ArrayList<HashMap<String, String>>();
-             attributes=booksService.getAllBooks();
+            HashMap<String, Object> Book1 = new HashMap<String, Object>();
+            Book1.put("name", "Engineering Psychology and Human Performance");
+            Book1.put("uni", "University of Pittsburgh");
+            Book1.put("course", "Human Factors in System Design");
+            Book1.put("img", "book1.jpg");
+            Book1.put("name2", "Some Book");
+            Book1.put("uni2", "CMU");
+            Book1.put("course2", "Course Name");
+            Book1.put("img2", "Book.JPG");
             
-
-            return new ModelAndView(attributes, "test.ftl");
+            return new ModelAndView(Book1, "test.ftl");
         }, new FreeMarkerEngine());
     
     }

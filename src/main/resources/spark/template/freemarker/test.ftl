@@ -58,20 +58,20 @@
 	<div class="row" id="row0">
 		<div class="col-1 col-m-1 colxmv books left">
 		</div>
-		<#list attributes as attribute>
+		
 		
 		<div class="col-u col-m-u colu books 1" id="0">
 			<a href="book.html?id=1">
-			<img src="images/book1.jpg" alt="Engineering Psychology and Human Performance">
-			<h2>Engineering Psychology and Human Performance</h2>
-			<h3>University of Pittsburgh</h3>
-			<h4>Human Factors in System Design</h4>
+			<img src="images/${img}" alt="Engineering Psychology and Human Performance">
+			<h2>${name}</h2>
+			<h3>${uni}</h3>
+			<h4>${course}</h4>
 			</a>
 		</div>
-		${attribute}
-		<#else>
-		<p>none found</p>
-		</#list>
+		
+		
+		
+		
 <div class="row footer" id="footer">
   <div class="col-6 col-m-6 footerCenter">
 		<h2>Tabadul</h2>
