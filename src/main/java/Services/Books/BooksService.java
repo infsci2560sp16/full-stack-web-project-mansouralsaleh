@@ -251,6 +251,7 @@ public class BooksService {
             Element element = (Element) node;
              if (id.equals(getValue("name", element))) {
                     output = getValue("image", element) ;
+                    output="hahaha";
             }
 	}} catch (Exception ex) {
 	ex.printStackTrace();}
