@@ -77,9 +77,9 @@ var string;
 	for(i=0; i<size; i++){
 		var scname = xmlDoc.getElementsByTagName("schoolname")[i].childNodes[0].nodeValue;
 		
-		var msize = xmlDoc.getElementsByTagName('majors').childElementCount;
-		string = string+'<div class="university"><h2>'+scname+"</h2>"+msize;
-		for(j=0; j<msize; j++){
+		
+		string = string+'<div class="university"><h2>'+scname+"</h2>";
+		for(j=0; j<3; j++){
 			var majorname = xmlDoc.getElementsByTagName("majorname")[j].childNodes[0].nodeValue;
 			string = string+'<a href="#"><h3>'+majorname+'</h3></a>';
 		}
