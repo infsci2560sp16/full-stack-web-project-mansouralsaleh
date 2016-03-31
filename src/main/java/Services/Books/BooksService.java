@@ -8,16 +8,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.lang.reflect.Type;
-import java.util.Map.Entry;
 
 public class BooksService {
     private static HashMap<String, String> book ;
@@ -86,7 +81,7 @@ public class BooksService {
         return arrayList;
     }
     
-    public void createBook(Integer id, String bookname, String bookauthors,
+    public void createBook(String bookname, String bookauthors,
             String bookcondition, String bookuniversity, String bookschool, String bookcourse,
             String bookISBN13, String bookISBN10, String bookimg, String bookdescription){
         
@@ -128,9 +123,7 @@ public class BooksService {
         int size = BooksIDs.size();
         return size;
     }
-    public String getbooksname(){
-        return BooksNames.get(0);
-    }
+
     
     //next two methods adopted from http://stackoverflow.com/questions/24573598/write-arraylist-of-custom-objects-to-file
     public int saveListToFile() {
