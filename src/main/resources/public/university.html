@@ -76,7 +76,6 @@ var string;
 	string="<h1>Browse by Schools</h1><h2>"+name+"</h2>";
 	for(i=0; i<size; i++){
 		var scname = xmlDoc.getElementsByTagName("schoolname")[i].childNodes[0].nodeValue;
-		scname= xmlDoc.getElementsByTagName("school")[i].childNodes[2].childNodes[2].length;
 		var msize = xmlDoc.getElementsByTagName('majorname').length;
 		string = string+'<div class="university"><h2>'+scname+"</h2>";
 		for(j=0; j<msize; j++){
@@ -101,7 +100,28 @@ var string;
 }
         </script>
   <div class="col-8 col-m-10 " id="x">
-
+  <h1>Browse by Schools</h1>
+  
+  <h2>University of Pittsburgh</h2>
+	<div class="university">
+	<h2>School of Information Science</h2>
+	string = string+Information Science</h3></a>
+	<a href="#"><h3>Telecomunication</h3></a>
+	<a href="#"><h3>Library & Information Science</h3></a>
+	</div>
+	<div class="university">
+	<h2>School of Education</h2>
+	<a href="#"><h3>Administrative and Policy Studies</h3></a>
+	<a href="#"><h3>Health and Physical Activity</h3></a>
+	<a href="#"><h3>Instruction and Learning</h3></a>
+	<a href="#"><h3>Psychology in Education</h3></a>
+	</div>
+	<div class="university">
+	<h2>School of Information Science</h2>
+	<a href="#"><h3>Information Science</h3></a>
+	<a href="#"><h3>Telecomunication</h3></a>
+	<a href="#"><h3>Library & Information Science</h3></a>
+	</div>
   </div>
   
   <div class="col-2 col-m-1 space">
