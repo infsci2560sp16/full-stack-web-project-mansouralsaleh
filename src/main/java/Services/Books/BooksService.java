@@ -237,21 +237,20 @@ public class BooksService {
 	
 	
     public static String getOneUniversities(String id){
-		String output = null;output="hahaha1";
-	try {output="hahaha";
+		String output = null;
+	try {
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             factory.setNamespaceAware(true);
-            Document doc = factory.newDocumentBuilder().parse(new URL("https://nameless-mountain-5787.herokuapp.com/unixml.xml").openStream());
+            Document doc = factory.newDocumentBuilder().parse(new URL("src/main/resources/public/unixml.xml").openStream());
             doc.getDocumentElement().normalize();
             NodeList nodes = doc.getElementsByTagName("University");
             for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
             Element element = (Element) node;
              if (id.equals(getValue("name", element))) {
-                    output = getValue("image", element) ;
-                    output="hahaha";
+                   output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" + "<Universities> <University>" + "<name>" + getValue("name", element)+ "</name></University></Universities>" ;
             }
 	}} catch (Exception ex) {
 	ex.printStackTrace();}
