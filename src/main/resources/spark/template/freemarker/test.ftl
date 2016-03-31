@@ -68,7 +68,9 @@
 			<h4>Human Factors in System Design</h4>
 			</a>
 		</div>
-		${city}
+		${attribute}
+		<#else>
+		<p>none found</p>
 		</#list>
 <div class="row footer" id="footer">
   <div class="col-6 col-m-6 footerCenter">
