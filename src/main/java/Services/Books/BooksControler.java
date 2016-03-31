@@ -95,7 +95,7 @@ public class BooksControler {
             
             return new ModelAndView(Book1, "test.ftl");
         }, new FreeMarkerEngine());
-        get("/test", (request, response) -> {
+        get("/registration", (request, response) -> {
              String about[]={"<h2>Tabadul</h2>","<h3 class='saudihouse'>The Saudi House in Pittsburgh</h3>","<h3 class='saudiemail'>saudi.n.pitt@gmail.com</h3></div><div class='col-6 col-m-6 '>",
              "<h3>What is Tabadul?</h3>","<p>Tabadul (The Arabic word for exchange as this website will provide books exchange services)is a service provided by the Saudi House in Pittsburgh. This service help Saudi students exchange books among each other.</p>",
              "<h3>Who we are?</h3>","<p>The Saudi House in Pittsburgh, which is a non-profit organization that act as a supervisory organization to the Saudi Clubs in all the different universities in Pittsburgh, have been serving saudi students and families living in the greater pittsburgh area for years. </p>"};
