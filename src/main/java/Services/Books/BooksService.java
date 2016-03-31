@@ -16,11 +16,13 @@ import java.net.*;
 import java.lang.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.StringReader;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 
 public class BooksService {
     private static HashMap<String, String> book ;
@@ -239,12 +241,16 @@ public class BooksService {
     public static String getOneUniversities(String id){
 		String output = null;
 	try {
-            File fXmlFile = new File("src/main/resources/public/unixml.xml");
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(fXmlFile);
-            
-            doc.getDocumentElement().normalize();
+            BufferedReader br = new BufferedReader(new FileReader(new File("src/main/resources/public/unixml.xml")));
+            String line;
+            StringBuilder sb = new StringBuilder();
+
+            while((line=br.readLine())!= null){
+                sb.append(line.trim());
+            }
+            String xml = sb.toString();
+            Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+            .parse(new InputSource(new StringReader(xml)));
             NodeList nodes = doc.getElementsByTagName("University");
             for (int i = 0; i < nodes.getLength(); i++) {
             Node node = nodes.item(i);
