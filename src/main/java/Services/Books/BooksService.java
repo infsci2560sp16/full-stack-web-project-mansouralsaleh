@@ -7,30 +7,56 @@ import com.google.common.collect.Lists;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.lang.reflect.Type;
-import java.net.*;
-import java.lang.*;
-import javax.xml.parsers.DocumentBuilderFactory;
-import java.io.File;
-import javax.xml.parsers.DocumentBuilder;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import java.util.Map.Entry;
 
 public class BooksService {
     private static HashMap<String, String> book ;
     private static List<HashMap<String,String>> arrayList ;
-    private static ArrayList<Books> BooksList ;
-    
+     private static ArrayList<Books> BooksList ;
+    private LinkedList<Integer> BooksIDs  = new LinkedList<>();// {"00001", "00002"};
+   // private String[] BooksNames = {"Engineering Psychology and Human Performance", "Some Book"};
+    private LinkedList<String> BooksNames  = new LinkedList<>();
+    //private String[] BooksAuthors = {"Christopher D. Wickens , Justin G. Hollands, Simon Banbury, Raja Parasuraman", "Many Authors"};
+    private LinkedList<String> BooksAuthors  = new LinkedList<>();
+   // private String[] BooksCondition = {"New", "Used - Very Good"};
+    private LinkedList<String> BooksCondition  = new LinkedList<>();
+   // private String[] BooksUniversity = {"University of Pittsburgh", "CMU"};
+    private LinkedList<String> BooksUniversity  = new LinkedList<>();
+   // private String[] BooksSchool = {"School of Information Science", "CS"};
+    private LinkedList<String> BooksSchool  = new LinkedList<>();
+   // private String[] BooksDescription = {"Forming connections between human performance and design Engineering Psychology and Human"
+    //        + " Performance, 4e examines human-machine interaction. The book is organized directly from the psychological "
+    //        + "perspective of human information processing. The chapters generally correspond to the flow of information as it is "
+    //        + "processed by a human being--from the senses, through the brain, to action--rather than from the perspective of "
+    //        + "system components or engineering design concepts. This book is ideal for a psychology student, engineering student, "
+     //       + "or actual practitioner in engineering psychology, human performance, and human factors Learning Goals Upon "
+    //        + "completing this book, readers should be able to: * Identify how human ability contributes to the design of "
+    //        + "technology. * Understand the connections within human information processing and human performance. * Challenge the"
+    //        + " way they think about technology's influence on human performance. * show how theoretical advances have been, or "
+    //        + "might be, applied to improving human-machine interaction", "Test Description"};
+    private LinkedList<String> BooksDescription  = new LinkedList<>();
+    //private String[] BooksISBN13 = {"978-0205021987", "111-2233445566"};
+    private LinkedList<String> BooksISBN13  = new LinkedList<>();
+    //private String[] BooksISBN10 = {"0205021980", "1122334455"};
+    private LinkedList<String> BooksISBN10  = new LinkedList<>();
+    //private String[] BooksImages = {"book1.jpg", "Book.JPG"};
+    private LinkedList<String> BooksImages  = new LinkedList<>();
+    //private String[] BooksCourse = {"Human Factors in System Design", "Course Name"};
+    private LinkedList<String> BooksCourse  = new LinkedList<>();
     
     public BooksService(){
         
-       saveListToFile();
+       // saveListToFile();
     }
     public List<HashMap<String,String>> getAllBooks(){
         return readCurrentList();
@@ -60,7 +86,7 @@ public class BooksService {
         return arrayList;
     }
     
-    public void createBook(String bookname, String bookauthors,
+    public void createBook(Integer id, String bookname, String bookauthors,
             String bookcondition, String bookuniversity, String bookschool, String bookcourse,
             String bookISBN13, String bookISBN10, String bookimg, String bookdescription){
         
@@ -97,7 +123,15 @@ public class BooksService {
                 
             }  
         }
-        
+    
+    public Integer getNumberOfBooks(){
+        int size = BooksIDs.size();
+        return size;
+    }
+    public String getbooksname(){
+        return BooksNames.get(0);
+    }
+    
     //next two methods adopted from http://stackoverflow.com/questions/24573598/write-arraylist-of-custom-objects-to-file
     public int saveListToFile() {
         Books book1 = new Books();
@@ -176,79 +210,7 @@ public class BooksService {
         } catch (IOException e) {
             return Book;
         }
+        
     }
     
-    public String getAllUniversities(){
-
-        try {
-            //filename is filepath string
-            BufferedReader br = new BufferedReader(new FileReader(new File("https://nameless-mountain-5787.herokuapp.com/unixml.xml")));
-            String line;
-            StringBuilder sb = new StringBuilder();
-
-            while((line=br.readLine())!= null){
-                sb.append(line.trim());
-            }
-            return sb.toString();
-        }
-        catch (Exception e) {
-            return e.toString();
-        }
-    }
-
-    public static Document loadTestDocument(String url) throws Exception {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        factory.setNamespaceAware(true);
-        return factory.newDocumentBuilder().parse(new URL(url).openStream());
-    }
-	
-
-	
-	
-public static String getOneUniversities(String id){
-		String output = null;
-	try {
-            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-
-            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-
-            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-            factory.setNamespaceAware(true);
-            Document doc = factory.newDocumentBuilder().parse(new URL("https://nameless-mountain-5787.herokuapp.com/unixml.xml").openStream());
-
-
-            doc.getDocumentElement().normalize();
-
-
-            NodeList nodes = doc.getElementsByTagName("University");
-
-            for (int i = 0; i < nodes.getLength(); i++) {
-
-            Node node = nodes.item(i);
-
-
-            Element element = (Element) node;
-
-             if (id.equals(getValue("name", element))) {
-
-
-                    output = getValue("image", element) ;
-
-
-            }
-
-
-	}} catch (Exception ex) {
-
-	ex.printStackTrace();}
-	
-	
-	return output;
-	}
-public static String getValue(String tag, Element element) {
-NodeList nodes = element.getElementsByTagName(tag).item(0).getChildNodes();
-Node node = (Node) nodes.item(0);
-return node.getNodeValue();
-
-}
 }
