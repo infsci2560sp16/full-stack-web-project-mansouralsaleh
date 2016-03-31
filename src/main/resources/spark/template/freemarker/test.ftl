@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
-<meta charset="UTF-8">
+<meta charset='utf-8'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>University of Pittsburgh --- Tabadul</title>
+<title>Tabadul Book Exchange website!</title>
 <link rel="stylesheet" type="text/css" href="./stylesheets/mainsheet1.css">
 <script src="./js/javascript.js"></script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
 
-<body onload="init();init2();">
+<body onload="init();">
 <a href="index.html" title="Tabadul Book exchange services">
 <div class="logo">
 <!--Background image of banner taken and changed from amazon.com -->
@@ -51,66 +52,25 @@
 </form>
   </div>
  </div>
- <div class="row top">
+ <div class="row top" id="beforeContent">
 
 </div>
-<div class="row">
-  <div class="col-2 col-m-1 space">
-  </div>
-  <script>
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        myFunction(xhttp);
-    }
-};
-var id = GetURLParameter('id');
-xhttp.open("GET", "/Universitys/"+id, true);
-xhttp.send();
-
-function myFunction(xml) {
-var string;
-    var xmlDoc = xml.responseXML;
-	var size = xmlDoc.getElementsByTagName('schoolname').length;
-	var name = xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
-	string="<h1>Browse by Schools</h1><h2>"+name+"</h2>";
-	var k=0;
-	for(i=0; i<size; i++){
-		var scname = xmlDoc.getElementsByTagName("schoolname")[i].childNodes[0].nodeValue;
+	<div class="row" id="row0">
+		<div class="col-1 col-m-1 colxmv books left">
+		</div>
+		<#list attributes as attribute>
 		
-		var
-		string = string+'<div class="university"><h2>'+scname+"</h2>";
-		for(j=0; j<3; j++){
-			var majorname = xmlDoc.getElementsByTagName("majorname")[k].childNodes[0].nodeValue;
-			string = string+'<a href="#"><h3>'+majorname+'</h3></a>';
-			k++;
-		}
-		string = string+'</div>';
-	}
-	document.getElementById("x").innerHTML =string;
-	/*for(i=0; i<size; i++){
-		console.log("Counter ="+counter+",,,,case i ="+ i);
-		var name = xmlDoc.getElementsByTagName("name")[i].childNodes[0].nodeValue;
-		var img = xmlDoc.getElementsByTagName("image")[i].childNodes[0].nodeValue;
-		document.getElementById(i).innerHTML =  '<a href="university.html?name='+name+'" ><img src="images/'+img+'"'+
-		'alt="'+name+'"><h2>'+name+'</h2></a>';
-
-
-		
-	}*/
-	
-
-}
-        </script>
-  <div class="col-8 col-m-10 " id="x">
-
-  </div>
-  
-  <div class="col-2 col-m-1 space">
-  </div>
-  
-</div>
-<div class="row footer">
+		<div class="col-u col-m-u colu books 1" id="0">
+			<a href="book.html?id=1">
+			<img src="images/book1.jpg" alt="Engineering Psychology and Human Performance">
+			<h2>Engineering Psychology and Human Performance</h2>
+			<h3>University of Pittsburgh</h3>
+			<h4>Human Factors in System Design</h4>
+			</a>
+		</div>
+		${city}
+		</#list>
+<div class="row footer" id="footer">
   <div class="col-6 col-m-6 footerCenter">
 		<h2>Tabadul</h2>
 		<h3 class="saudihouse">The Saudi House in Pittsburgh</h3>
@@ -125,6 +85,8 @@ var string;
 		<p>The Saudi House in Pittsburgh, which is a non-profit organization that act as a supervisory organization to the Saudi Clubs in all the different universities in Pittsburgh, have been serving saudi students and families living in the greater pittsburgh area for years. </p>
   </div>
   </div>
+
+
 </body>
 
 </html>
