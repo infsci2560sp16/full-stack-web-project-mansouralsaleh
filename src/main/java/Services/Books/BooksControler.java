@@ -116,8 +116,8 @@ public class BooksControler {
         connection = DatabaseUrl.extract().getConnection();
 
         Statement stmt = connection.createStatement();
-        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Accounts (ID int NOT NULL AUTO_INCREMENT, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255), PRIMARY KEY (ID))");
-        stmt.executeUpdate("INSERT INTO Accounts (LastName,FirstName, Address, City) VALUES ('Alsaleh','Mansour', '705 Duncan Ave', 'Pittsburgh')");
+        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Accounts (ID int , LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255), PRIMARY KEY (ID))");
+        stmt.executeUpdate("INSERT INTO Accounts (ID,LastName,FirstName, Address, City) VALUES ('1', Alsaleh','Mansour', '705 Duncan Ave', 'Pittsburgh')");
         ResultSet rs = stmt.executeQuery("SELECT * FROM Accounts");
 
         ArrayList<String> output = new ArrayList<String>();
