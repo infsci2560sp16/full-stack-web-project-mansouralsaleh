@@ -122,7 +122,7 @@ public class BooksControler {
 
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {
-          output.add( "Read from DB: " + rs.getRow());
+          output.add( "Read from DB: " + rs.getString("LastName"));
         }
 
         attributes.put("results", output);
