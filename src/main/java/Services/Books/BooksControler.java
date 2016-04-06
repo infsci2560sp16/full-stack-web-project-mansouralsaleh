@@ -116,24 +116,24 @@ public class BooksControler {
         connection = DatabaseUrl.extract().getConnection();
 
         Statement stmt = connection.createStatement();
-        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-        stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-        ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS Accounts (ID int NOT NULL AUTO_INCREMENT, LastName varchar(255) NOT NULL, FirstName varchar(255), Address varchar(255), City varchar(255), PRIMARY KEY (ID))");
+        stmt.executeUpdate("INSERT INTO Accounts (LastName,FirstName, Address, City) VALUES ('Alsaleh','Mansour', '705 Duncan Ave', 'Pittsburgh')");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Accounts");
 
         ArrayList<String> output = new ArrayList<String>();
         while (rs.next()) {
-          output.add( "Read from DB: " + rs.getTimestamp("tick"));
+          output.add( "Read from DB: " + rs.getRow());
         }
 
         attributes.put("results", output);
-        return new ModelAndView(attributes, "db.ftl");
+        return attributes;
       } catch (Exception e) {
         attributes.put("message", "There was an error: " + e);
-        return new ModelAndView(attributes, "error.ftl");
+        return attributes;
       } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
-    }, new FreeMarkerEngine());
+    },  gson::toJson);
     
     }
 
